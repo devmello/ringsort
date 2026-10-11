@@ -1,0 +1,151 @@
+{
+  "items": {
+    "red": {
+      "label": "Red ring",
+      "words": [
+        "red",
+        "reds"
+      ],
+      "task": "Pick the red ring and drop it in the red cup",
+      "mode": "model",
+      "model": "models/red/final/pretrained_model",
+      "grasp_reference": "data/grasp_red.json",
+      "run_time_s": 18,
+      "color": "#e0474c",
+      "hsv": [
+        [
+          [
+            0,
+            120,
+            90
+          ],
+          [
+            8,
+            255,
+            255
+          ]
+        ],
+        [
+          [
+            172,
+            120,
+            90
+          ],
+          [
+            180,
+            255,
+            255
+          ]
+        ]
+      ]
+    },
+    "purple": {
+      "label": "Purple ring",
+      "words": [
+        "purple",
+        "purples"
+      ],
+      "task": "Pick the purple ring and drop it in the purple cup",
+      "mode": "model",
+      "model": "models/purple/final/pretrained_model",
+      "grasp_reference": "data/grasp_purple.json",
+      "run_time_s": 18,
+      "color": "#9b6bff",
+      "hsv": [
+        [
+          [
+            118,
+            50,
+            50
+          ],
+          [
+            165,
+            255,
+            255
+          ]
+        ]
+      ]
+    },
+    "teal": {
+      "label": "Teal ring",
+      "words": [
+        "teal",
+        "teals",
+        "green",
+        "blue"
+      ],
+      "task": "Pick the teal ring and drop it in the teal cup",
+      "mode": "model",
+      "model": "models/teal/final/pretrained_model",
+      "grasp_reference": "data/grasp_teal.json",
+      "run_time_s": 15,
+      "color": "#1fb5a8",
+      "hsv": [
+        [
+          [
+            74,
+            90,
+            80
+          ],
+          [
+            98,
+            255,
+            255
+          ]
+        ]
+      ]
+    }
+  },
+  "kits": {
+    "Sort all": [
+      "purple",
+      "teal"
+    ],
+    "Red": [
+      "red"
+    ],
+    "Purple": [
+      "purple"
+    ],
+    "Teal": [
+      "teal"
+    ]
+  },
+  "limits": {
+    "max_items_per_order": 3,
+    "max_per_item": 1,
+    "auto_retries": 0
+  },
+  "auto_repack": true,
+  "camera_check": {
+    "enabled": false
+  },
+  "vision": {
+    "camera": "front",
+    "reference": "data/camera_ref_purple_30.png",
+    "areas": "data/vision.json",
+    "bins": {
+      "purple": [
+        388,
+        92,
+        62
+      ],
+      "teal": [
+        200,
+        84,
+        56
+      ]
+    },
+    "camera_positions": {
+      "purple": "data/camera_ref_purple_30.png",
+      "teal": "data/camera_ref_teal_20.png"
+    }
+  },
+  "voice": {
+    "enabled": false,
+    "voice_id": "",
+    "model_id": "eleven_multilingual_v2",
+    "clips": "assets/voice"
+  },
+  "fake_robot": false
+}

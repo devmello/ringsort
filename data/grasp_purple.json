@@ -1,0 +1,11 @@
+{
+  "episodes": 63,
+  "episodes_with_hold": 63,
+  "hold_s_median": 1.6666666666666667,
+  "gap_median": 13.275489330291748,
+  "min_gap": 5.3101957321167,
+  "release_pan": 29.770800605652823,
+  "release_pan_std": 2.0888452667336956,
+  "pick_pan": 36.99773248036703,
+  "pan_tolerance": 8.355381066934783
+}

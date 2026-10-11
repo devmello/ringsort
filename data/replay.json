@@ -1,0 +1,1238 @@
+{
+ "pan_per_px": [
+  0.1768,
+  0.1803
+ ],
+ "items": {
+  "red": [
+   {
+    "episode": 0,
+    "x": 312.3,
+    "y": 323.2,
+    "grasp": 246,
+    "release": 344,
+    "frames": 525
+   },
+   {
+    "episode": 1,
+    "x": 336.3,
+    "y": 390.7,
+    "grasp": 266,
+    "release": 361,
+    "frames": 486
+   },
+   {
+    "episode": 2,
+    "x": 386.4,
+    "y": 350.5,
+    "grasp": 221,
+    "release": 301,
+    "frames": 394
+   },
+   {
+    "episode": 3,
+    "x": 400.4,
+    "y": 340.4,
+    "grasp": 205,
+    "release": 289,
+    "frames": 388
+   },
+   {
+    "episode": 4,
+    "x": 325.0,
+    "y": 408.5,
+    "grasp": 286,
+    "release": 379,
+    "frames": 448
+   },
+   {
+    "episode": 5,
+    "x": 334.7,
+    "y": 378.2,
+    "grasp": 184,
+    "release": 305,
+    "frames": 372
+   },
+   {
+    "episode": 6,
+    "x": 330.7,
+    "y": 374.1,
+    "grasp": 192,
+    "release": 261,
+    "frames": 327
+   },
+   {
+    "episode": 7,
+    "x": 419.1,
+    "y": 332.7,
+    "grasp": 190,
+    "release": 292,
+    "frames": 357
+   },
+   {
+    "episode": 8,
+    "x": 429.0,
+    "y": 333.0,
+    "grasp": 255,
+    "release": 339,
+    "frames": 407
+   },
+   {
+    "episode": 9,
+    "x": 379.0,
+    "y": 324.3,
+    "grasp": 136,
+    "release": 202,
+    "frames": 301
+   },
+   {
+    "episode": 10,
+    "x": 300.3,
+    "y": 328.7,
+    "grasp": 98,
+    "release": 170,
+    "frames": 242
+   },
+   {
+    "episode": 11,
+    "x": 391.3,
+    "y": 320.9,
+    "grasp": 118,
+    "release": 177,
+    "frames": 253
+   },
+   {
+    "episode": 12,
+    "x": 364.7,
+    "y": 392.4,
+    "grasp": 154,
+    "release": 227,
+    "frames": 309
+   },
+   {
+    "episode": 13,
+    "x": 334.0,
+    "y": 262.7,
+    "grasp": 138,
+    "release": 225,
+    "frames": 310
+   },
+   {
+    "episode": 14,
+    "x": 289.8,
+    "y": 303.8,
+    "grasp": 197,
+    "release": 270,
+    "frames": 351
+   },
+   {
+    "episode": 15,
+    "x": 340.0,
+    "y": 308.6,
+    "grasp": 187,
+    "release": 261,
+    "frames": 349
+   },
+   {
+    "episode": 16,
+    "x": 365.6,
+    "y": 298.6,
+    "grasp": 237,
+    "release": 333,
+    "frames": 413
+   },
+   {
+    "episode": 17,
+    "x": 424.2,
+    "y": 268.9,
+    "grasp": 141,
+    "release": 211,
+    "frames": 279
+   },
+   {
+    "episode": 18,
+    "x": 359.5,
+    "y": 275.8,
+    "grasp": 159,
+    "release": 252,
+    "frames": 335
+   },
+   {
+    "episode": 19,
+    "x": 424.2,
+    "y": 285.1,
+    "grasp": 116,
+    "release": 181,
+    "frames": 280
+   },
+   {
+    "episode": 20,
+    "x": 421.0,
+    "y": 308.0,
+    "grasp": 146,
+    "release": 205,
+    "frames": 289
+   },
+   {
+    "episode": 21,
+    "x": 413.0,
+    "y": 292.9,
+    "grasp": 141,
+    "release": 205,
+    "frames": 285
+   },
+   {
+    "episode": 22,
+    "x": 403.8,
+    "y": 281.2,
+    "grasp": 118,
+    "release": 185,
+    "frames": 271
+   },
+   {
+    "episode": 23,
+    "x": 432.2,
+    "y": 270.7,
+    "grasp": 132,
+    "release": 211,
+    "frames": 285
+   },
+   {
+    "episode": 24,
+    "x": 445.6,
+    "y": 284.1,
+    "grasp": 173,
+    "release": 261,
+    "frames": 358
+   },
+   {
+    "episode": 25,
+    "x": 421.2,
+    "y": 268.9,
+    "grasp": 113,
+    "release": 209,
+    "frames": 300
+   },
+   {
+    "episode": 26,
+    "x": 443.1,
+    "y": 277.8,
+    "grasp": 125,
+    "release": 193,
+    "frames": 278
+   },
+   {
+    "episode": 27,
+    "x": 432.1,
+    "y": 297.3,
+    "grasp": 153,
+    "release": 239,
+    "frames": 367
+   },
+   {
+    "episode": 28,
+    "x": 445.9,
+    "y": 277.5,
+    "grasp": 149,
+    "release": 219,
+    "frames": 322
+   },
+   {
+    "episode": 29,
+    "x": 435.6,
+    "y": 281.9,
+    "grasp": 140,
+    "release": 197,
+    "frames": 276
+   },
+   {
+    "episode": 30,
+    "x": 442.9,
+    "y": 276.2,
+    "grasp": 157,
+    "release": 232,
+    "frames": 311
+   },
+   {
+    "episode": 31,
+    "x": 444.8,
+    "y": 286.3,
+    "grasp": 124,
+    "release": 182,
+    "frames": 261
+   },
+   {
+    "episode": 32,
+    "x": 371.8,
+    "y": 335.7,
+    "grasp": 112,
+    "release": 176,
+    "frames": 249
+   },
+   {
+    "episode": 33,
+    "x": 301.0,
+    "y": 278.8,
+    "grasp": 186,
+    "release": 262,
+    "frames": 406
+   },
+   {
+    "episode": 34,
+    "x": 370.6,
+    "y": 283.6,
+    "grasp": 117,
+    "release": 175,
+    "frames": 241
+   },
+   {
+    "episode": 35,
+    "x": 370.1,
+    "y": 257.8,
+    "grasp": 159,
+    "release": 220,
+    "frames": 295
+   },
+   {
+    "episode": 36,
+    "x": 328.7,
+    "y": 320.5,
+    "grasp": 140,
+    "release": 203,
+    "frames": 284
+   },
+   {
+    "episode": 37,
+    "x": 364.6,
+    "y": 325.2,
+    "grasp": 136,
+    "release": 204,
+    "frames": 292
+   },
+   {
+    "episode": 38,
+    "x": 383.3,
+    "y": 243.2,
+    "grasp": 111,
+    "release": 176,
+    "frames": 272
+   },
+   {
+    "episode": 39,
+    "x": 303.7,
+    "y": 299.4,
+    "grasp": 122,
+    "release": 194,
+    "frames": 281
+   },
+   {
+    "episode": 40,
+    "x": 340.6,
+    "y": 279.4,
+    "grasp": 118,
+    "release": 183,
+    "frames": 259
+   },
+   {
+    "episode": 41,
+    "x": 375.4,
+    "y": 307.7,
+    "grasp": 104,
+    "release": 181,
+    "frames": 274
+   },
+   {
+    "episode": 43,
+    "x": 400.3,
+    "y": 249.4,
+    "grasp": 172,
+    "release": 255,
+    "frames": 337
+   },
+   {
+    "episode": 44,
+    "x": 284.5,
+    "y": 259.4,
+    "grasp": 112,
+    "release": 182,
+    "frames": 259
+   },
+   {
+    "episode": 45,
+    "x": 356.0,
+    "y": 307.7,
+    "grasp": 132,
+    "release": 197,
+    "frames": 280
+   },
+   {
+    "episode": 46,
+    "x": 387.9,
+    "y": 246.1,
+    "grasp": 146,
+    "release": 222,
+    "frames": 306
+   }
+  ],
+  "purple": [
+   {
+    "episode": 0,
+    "x": 379.2,
+    "y": 276.9,
+    "grasp": 216,
+    "release": 296,
+    "frames": 407
+   },
+   {
+    "episode": 1,
+    "x": 387.2,
+    "y": 283.9,
+    "grasp": 188,
+    "release": 299,
+    "frames": 381
+   },
+   {
+    "episode": 2,
+    "x": 364.0,
+    "y": 279.2,
+    "grasp": 284,
+    "release": 381,
+    "frames": 441
+   },
+   {
+    "episode": 3,
+    "x": 304.9,
+    "y": 292.0,
+    "grasp": 140,
+    "release": 212,
+    "frames": 304
+   },
+   {
+    "episode": 4,
+    "x": 325.5,
+    "y": 245.0,
+    "grasp": 205,
+    "release": 276,
+    "frames": 363
+   },
+   {
+    "episode": 5,
+    "x": 285.8,
+    "y": 313.1,
+    "grasp": 220,
+    "release": 303,
+    "frames": 376
+   },
+   {
+    "episode": 6,
+    "x": 272.0,
+    "y": 259.4,
+    "grasp": 141,
+    "release": 208,
+    "frames": 287
+   },
+   {
+    "episode": 7,
+    "x": 309.4,
+    "y": 263.8,
+    "grasp": 134,
+    "release": 193,
+    "frames": 266
+   },
+   {
+    "episode": 8,
+    "x": 340.8,
+    "y": 289.1,
+    "grasp": 82,
+    "release": 136,
+    "frames": 241
+   },
+   {
+    "episode": 9,
+    "x": 371.1,
+    "y": 267.6,
+    "grasp": 147,
+    "release": 194,
+    "frames": 283
+   },
+   {
+    "episode": 10,
+    "x": 319.0,
+    "y": 297.1,
+    "grasp": 166,
+    "release": 226,
+    "frames": 306
+   },
+   {
+    "episode": 11,
+    "x": 345.1,
+    "y": 319.8,
+    "grasp": 133,
+    "release": 209,
+    "frames": 336
+   },
+   {
+    "episode": 12,
+    "x": 338.1,
+    "y": 313.2,
+    "grasp": 90,
+    "release": 146,
+    "frames": 222
+   },
+   {
+    "episode": 13,
+    "x": 328.7,
+    "y": 292.0,
+    "grasp": 86,
+    "release": 134,
+    "frames": 221
+   },
+   {
+    "episode": 14,
+    "x": 306.8,
+    "y": 263.1,
+    "grasp": 93,
+    "release": 141,
+    "frames": 231
+   },
+   {
+    "episode": 15,
+    "x": 384.3,
+    "y": 272.8,
+    "grasp": 138,
+    "release": 192,
+    "frames": 292
+   },
+   {
+    "episode": 16,
+    "x": 296.9,
+    "y": 277.0,
+    "grasp": 118,
+    "release": 163,
+    "frames": 235
+   },
+   {
+    "episode": 17,
+    "x": 365.9,
+    "y": 247.2,
+    "grasp": 98,
+    "release": 135,
+    "frames": 210
+   },
+   {
+    "episode": 18,
+    "x": 421.8,
+    "y": 297.8,
+    "grasp": 159,
+    "release": 198,
+    "frames": 274
+   },
+   {
+    "episode": 19,
+    "x": 321.0,
+    "y": 335.1,
+    "grasp": 106,
+    "release": 169,
+    "frames": 255
+   },
+   {
+    "episode": 20,
+    "x": 302.0,
+    "y": 259.6,
+    "grasp": 141,
+    "release": 201,
+    "frames": 307
+   },
+   {
+    "episode": 21,
+    "x": 276.7,
+    "y": 258.9,
+    "grasp": 95,
+    "release": 149,
+    "frames": 236
+   },
+   {
+    "episode": 22,
+    "x": 366.5,
+    "y": 248.6,
+    "grasp": 121,
+    "release": 171,
+    "frames": 283
+   },
+   {
+    "episode": 23,
+    "x": 273.8,
+    "y": 279.6,
+    "grasp": 108,
+    "release": 172,
+    "frames": 253
+   },
+   {
+    "episode": 24,
+    "x": 349.8,
+    "y": 239.7,
+    "grasp": 180,
+    "release": 227,
+    "frames": 304
+   },
+   {
+    "episode": 25,
+    "x": 301.0,
+    "y": 322.4,
+    "grasp": 102,
+    "release": 161,
+    "frames": 230
+   },
+   {
+    "episode": 26,
+    "x": 348.1,
+    "y": 266.3,
+    "grasp": 192,
+    "release": 244,
+    "frames": 320
+   },
+   {
+    "episode": 27,
+    "x": 285.1,
+    "y": 300.2,
+    "grasp": 173,
+    "release": 223,
+    "frames": 286
+   },
+   {
+    "episode": 28,
+    "x": 316.8,
+    "y": 315.9,
+    "grasp": 122,
+    "release": 171,
+    "frames": 243
+   },
+   {
+    "episode": 29,
+    "x": 349.9,
+    "y": 277.5,
+    "grasp": 208,
+    "release": 249,
+    "frames": 347
+   },
+   {
+    "episode": 30,
+    "x": 375.0,
+    "y": 262.0,
+    "grasp": 153,
+    "release": 199,
+    "frames": 254
+   },
+   {
+    "episode": 31,
+    "x": 306.0,
+    "y": 319.5,
+    "grasp": 199,
+    "release": 249,
+    "frames": 307
+   },
+   {
+    "episode": 32,
+    "x": 323.7,
+    "y": 336.6,
+    "grasp": 170,
+    "release": 207,
+    "frames": 249
+   },
+   {
+    "episode": 33,
+    "x": 277.9,
+    "y": 268.3,
+    "grasp": 170,
+    "release": 208,
+    "frames": 261
+   },
+   {
+    "episode": 34,
+    "x": 361.0,
+    "y": 273.3,
+    "grasp": 204,
+    "release": 245,
+    "frames": 320
+   },
+   {
+    "episode": 35,
+    "x": 308.3,
+    "y": 342.0,
+    "grasp": 199,
+    "release": 252,
+    "frames": 307
+   },
+   {
+    "episode": 36,
+    "x": 366.9,
+    "y": 332.3,
+    "grasp": 189,
+    "release": 246,
+    "frames": 311
+   },
+   {
+    "episode": 37,
+    "x": 319.9,
+    "y": 339.3,
+    "grasp": 157,
+    "release": 215,
+    "frames": 274
+   },
+   {
+    "episode": 38,
+    "x": 294.9,
+    "y": 333.4,
+    "grasp": 156,
+    "release": 202,
+    "frames": 257
+   },
+   {
+    "episode": 39,
+    "x": 375.0,
+    "y": 270.4,
+    "grasp": 227,
+    "release": 263,
+    "frames": 324
+   },
+   {
+    "episode": 40,
+    "x": 300.5,
+    "y": 270.8,
+    "grasp": 186,
+    "release": 221,
+    "frames": 274
+   },
+   {
+    "episode": 41,
+    "x": 275.1,
+    "y": 309.1,
+    "grasp": 129,
+    "release": 182,
+    "frames": 247
+   },
+   {
+    "episode": 42,
+    "x": 281.7,
+    "y": 282.5,
+    "grasp": 205,
+    "release": 242,
+    "frames": 303
+   },
+   {
+    "episode": 43,
+    "x": 336.5,
+    "y": 353.9,
+    "grasp": 179,
+    "release": 226,
+    "frames": 287
+   },
+   {
+    "episode": 44,
+    "x": 392.6,
+    "y": 362.7,
+    "grasp": 173,
+    "release": 245,
+    "frames": 308
+   },
+   {
+    "episode": 45,
+    "x": 355.8,
+    "y": 329.6,
+    "grasp": 192,
+    "release": 246,
+    "frames": 298
+   },
+   {
+    "episode": 46,
+    "x": 279.0,
+    "y": 280.5,
+    "grasp": 180,
+    "release": 233,
+    "frames": 305
+   },
+   {
+    "episode": 47,
+    "x": 369.9,
+    "y": 259.2,
+    "grasp": 163,
+    "release": 200,
+    "frames": 249
+   },
+   {
+    "episode": 48,
+    "x": 332.9,
+    "y": 338.2,
+    "grasp": 186,
+    "release": 230,
+    "frames": 274
+   },
+   {
+    "episode": 49,
+    "x": 359.0,
+    "y": 250.3,
+    "grasp": 180,
+    "release": 219,
+    "frames": 288
+   },
+   {
+    "episode": 50,
+    "x": 308.3,
+    "y": 325.8,
+    "grasp": 173,
+    "release": 208,
+    "frames": 254
+   },
+   {
+    "episode": 51,
+    "x": 357.0,
+    "y": 244.4,
+    "grasp": 215,
+    "release": 251,
+    "frames": 307
+   },
+   {
+    "episode": 52,
+    "x": 347.6,
+    "y": 345.1,
+    "grasp": 189,
+    "release": 242,
+    "frames": 323
+   },
+   {
+    "episode": 53,
+    "x": 332.7,
+    "y": 271.1,
+    "grasp": 213,
+    "release": 259,
+    "frames": 333
+   },
+   {
+    "episode": 54,
+    "x": 328.1,
+    "y": 397.7,
+    "grasp": 174,
+    "release": 233,
+    "frames": 285
+   },
+   {
+    "episode": 55,
+    "x": 339.9,
+    "y": 296.5,
+    "grasp": 191,
+    "release": 229,
+    "frames": 281
+   },
+   {
+    "episode": 56,
+    "x": 339.2,
+    "y": 375.6,
+    "grasp": 177,
+    "release": 230,
+    "frames": 283
+   },
+   {
+    "episode": 57,
+    "x": 374.0,
+    "y": 302.4,
+    "grasp": 141,
+    "release": 195,
+    "frames": 249
+   },
+   {
+    "episode": 58,
+    "x": 400.5,
+    "y": 365.9,
+    "grasp": 172,
+    "release": 212,
+    "frames": 265
+   },
+   {
+    "episode": 59,
+    "x": 249.8,
+    "y": 270.1,
+    "grasp": 153,
+    "release": 201,
+    "frames": 264
+   },
+   {
+    "episode": 60,
+    "x": 402.6,
+    "y": 330.7,
+    "grasp": 175,
+    "release": 228,
+    "frames": 291
+   },
+   {
+    "episode": 61,
+    "x": 270.8,
+    "y": 253.5,
+    "grasp": 187,
+    "release": 232,
+    "frames": 316
+   },
+   {
+    "episode": 62,
+    "x": 317.9,
+    "y": 250.7,
+    "grasp": 184,
+    "release": 222,
+    "frames": 283
+   }
+  ],
+  "teal": [
+   {
+    "episode": 0,
+    "x": 363.5,
+    "y": 359.8,
+    "grasp": 285,
+    "release": 369,
+    "frames": 477
+   },
+   {
+    "episode": 1,
+    "x": 357.5,
+    "y": 364.8,
+    "grasp": 240,
+    "release": 311,
+    "frames": 378
+   },
+   {
+    "episode": 2,
+    "x": 358.5,
+    "y": 364.6,
+    "grasp": 265,
+    "release": 327,
+    "frames": 403
+   },
+   {
+    "episode": 3,
+    "x": 355.7,
+    "y": 363.7,
+    "grasp": 202,
+    "release": 253,
+    "frames": 326
+   },
+   {
+    "episode": 5,
+    "x": 353.4,
+    "y": 361.6,
+    "grasp": 197,
+    "release": 259,
+    "frames": 341
+   },
+   {
+    "episode": 6,
+    "x": 354.6,
+    "y": 361.0,
+    "grasp": 153,
+    "release": 238,
+    "frames": 313
+   },
+   {
+    "episode": 7,
+    "x": 348.4,
+    "y": 365.9,
+    "grasp": 169,
+    "release": 237,
+    "frames": 293
+   },
+   {
+    "episode": 8,
+    "x": 348.1,
+    "y": 363.4,
+    "grasp": 205,
+    "release": 282,
+    "frames": 363
+   },
+   {
+    "episode": 9,
+    "x": 349.1,
+    "y": 366.6,
+    "grasp": 228,
+    "release": 286,
+    "frames": 368
+   },
+   {
+    "episode": 10,
+    "x": 355.0,
+    "y": 365.6,
+    "grasp": 197,
+    "release": 274,
+    "frames": 347
+   },
+   {
+    "episode": 11,
+    "x": 366.1,
+    "y": 366.8,
+    "grasp": 147,
+    "release": 203,
+    "frames": 274
+   },
+   {
+    "episode": 12,
+    "x": 358.5,
+    "y": 368.8,
+    "grasp": 166,
+    "release": 226,
+    "frames": 301
+   },
+   {
+    "episode": 13,
+    "x": 360.0,
+    "y": 366.5,
+    "grasp": 160,
+    "release": 219,
+    "frames": 282
+   },
+   {
+    "episode": 14,
+    "x": 359.0,
+    "y": 369.2,
+    "grasp": 158,
+    "release": 225,
+    "frames": 310
+   },
+   {
+    "episode": 15,
+    "x": 375.6,
+    "y": 369.6,
+    "grasp": 169,
+    "release": 229,
+    "frames": 285
+   },
+   {
+    "episode": 16,
+    "x": 354.7,
+    "y": 366.0,
+    "grasp": 266,
+    "release": 331,
+    "frames": 384
+   },
+   {
+    "episode": 17,
+    "x": 339.5,
+    "y": 366.9,
+    "grasp": 178,
+    "release": 234,
+    "frames": 302
+   },
+   {
+    "episode": 18,
+    "x": 353.7,
+    "y": 367.0,
+    "grasp": 186,
+    "release": 255,
+    "frames": 319
+   },
+   {
+    "episode": 19,
+    "x": 363.4,
+    "y": 367.1,
+    "grasp": 230,
+    "release": 287,
+    "frames": 348
+   },
+   {
+    "episode": 20,
+    "x": 352.9,
+    "y": 364.3,
+    "grasp": 154,
+    "release": 210,
+    "frames": 264
+   },
+   {
+    "episode": 21,
+    "x": 360.4,
+    "y": 363.0,
+    "grasp": 143,
+    "release": 194,
+    "frames": 243
+   },
+   {
+    "episode": 22,
+    "x": 346.8,
+    "y": 370.8,
+    "grasp": 173,
+    "release": 219,
+    "frames": 272
+   },
+   {
+    "episode": 23,
+    "x": 362.3,
+    "y": 364.8,
+    "grasp": 161,
+    "release": 209,
+    "frames": 274
+   },
+   {
+    "episode": 24,
+    "x": 366.9,
+    "y": 362.1,
+    "grasp": 156,
+    "release": 203,
+    "frames": 253
+   },
+   {
+    "episode": 25,
+    "x": 361.8,
+    "y": 364.6,
+    "grasp": 147,
+    "release": 192,
+    "frames": 246
+   },
+   {
+    "episode": 26,
+    "x": 345.7,
+    "y": 362.1,
+    "grasp": 157,
+    "release": 203,
+    "frames": 248
+   },
+   {
+    "episode": 27,
+    "x": 369.6,
+    "y": 365.1,
+    "grasp": 186,
+    "release": 223,
+    "frames": 253
+   },
+   {
+    "episode": 28,
+    "x": 370.6,
+    "y": 366.0,
+    "grasp": 178,
+    "release": 219,
+    "frames": 273
+   },
+   {
+    "episode": 29,
+    "x": 356.4,
+    "y": 362.8,
+    "grasp": 153,
+    "release": 197,
+    "frames": 248
+   },
+   {
+    "episode": 30,
+    "x": 362.2,
+    "y": 364.9,
+    "grasp": 171,
+    "release": 216,
+    "frames": 264
+   },
+   {
+    "episode": 31,
+    "x": 373.2,
+    "y": 367.3,
+    "grasp": 153,
+    "release": 194,
+    "frames": 238
+   },
+   {
+    "episode": 32,
+    "x": 377.4,
+    "y": 367.6,
+    "grasp": 163,
+    "release": 209,
+    "frames": 311
+   },
+   {
+    "episode": 33,
+    "x": 364.9,
+    "y": 362.9,
+    "grasp": 152,
+    "release": 196,
+    "frames": 257
+   },
+   {
+    "episode": 34,
+    "x": 359.4,
+    "y": 358.5,
+    "grasp": 160,
+    "release": 216,
+    "frames": 265
+   },
+   {
+    "episode": 35,
+    "x": 371.8,
+    "y": 364.0,
+    "grasp": 161,
+    "release": 218,
+    "frames": 272
+   },
+   {
+    "episode": 36,
+    "x": 370.2,
+    "y": 363.3,
+    "grasp": 180,
+    "release": 227,
+    "frames": 279
+   },
+   {
+    "episode": 37,
+    "x": 355.6,
+    "y": 349.0,
+    "grasp": 141,
+    "release": 187,
+    "frames": 240
+   },
+   {
+    "episode": 38,
+    "x": 371.0,
+    "y": 373.5,
+    "grasp": 168,
+    "release": 213,
+    "frames": 278
+   },
+   {
+    "episode": 39,
+    "x": 373.6,
+    "y": 363.3,
+    "grasp": 138,
+    "release": 193,
+    "frames": 253
+   },
+   {
+    "episode": 40,
+    "x": 373.5,
+    "y": 365.7,
+    "grasp": 143,
+    "release": 195,
+    "frames": 252
+   },
+   {
+    "episode": 41,
+    "x": 375.3,
+    "y": 380.4,
+    "grasp": 162,
+    "release": 218,
+    "frames": 262
+   },
+   {
+    "episode": 42,
+    "x": 366.8,
+    "y": 363.1,
+    "grasp": 154,
+    "release": 203,
+    "frames": 265
+   },
+   {
+    "episode": 43,
+    "x": 363.2,
+    "y": 363.3,
+    "grasp": 155,
+    "release": 194,
+    "frames": 242
+   },
+   {
+    "episode": 44,
+    "x": 369.6,
+    "y": 366.0,
+    "grasp": 196,
+    "release": 265,
+    "frames": 318
+   }
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+.pytest_cache/
+
+# Made at run time. data/ is ignored except the small files the cell needs to run:
+# grasp references, taught areas, the replay index and the camera reference frames.
+data/*
+!data/grasp_*.json
+!data/vision.json
+!data/replay.json
+!data/camera_ref_*.png
+models/
+outputs/
+datasets/
+logs/
+
+# Keys: never commit these
+scripts/secrets.env
+.env
+kitcheck_cloud.tar.gz
+
+# Local caches and run folders the scripts create when run from scripts/
+.cache/
+scripts/datasets/
+scripts/logs/
+scripts/outputs/
+
+# Personal working checklist for the event day
+DAY2-CHECKLIST.md

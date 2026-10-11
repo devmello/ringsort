@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RingSort Station</title>
+<style>
+:root{
+  --bg:#0e1115;--panel:#161a20;--panel2:#1c2129;--line:#2a313c;--text:#e7eaef;--muted:#8d96a5;
+  --green:#22c55e;--amber:#f59e0b;--red:#ef4444;--hazard:#f5c518;--blue:#60a5fa;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:8px 14px}
+button:hover:not(:disabled){border-color:#4b5563}
+button:disabled{opacity:.4;cursor:not-allowed}
+select{font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:4px 6px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* header */
+header{display:flex;align-items:center;gap:18px;padding:12px 20px;background:var(--panel);position:relative}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:repeating-linear-gradient(-45deg,var(--hazard) 0 14px,#111 14px 28px)}
+.brand{font-size:22px;font-weight:800;letter-spacing:.5px}
+.brand span{color:var(--muted);font-weight:500;font-size:16px;margin-left:8px}
+.status{font-size:20px;font-weight:700;margin-left:auto}
+.clock{color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.badge{font-size:12px;font-weight:700;letter-spacing:.6px;padding:3px 8px;border-radius:5px;background:#3b2f0b;color:var(--hazard)}
+
+/* tower light */
+.tower{display:flex;flex-direction:column;gap:3px;padding:4px;background:#0a0c0f;border:1px solid var(--line);border-radius:6px}
+.tower i{width:18px;height:14px;border-radius:3px;opacity:.18}
+.tower .r{background:var(--red)}.tower .a{background:var(--amber)}.tower .g{background:var(--green)}
+.tower i.on{opacity:1;box-shadow:0 0 12px currentColor}
+.tower .r.on{color:var(--red)}.tower .a.on{color:var(--amber)}.tower .g.on{color:var(--green)}
+.tower i.blink{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{opacity:.18;box-shadow:none}}
+
+main{padding:16px 20px 28px;display:grid;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h2{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700}
+
+/* operator call */
+#operator{display:none;border:2px solid var(--red);background:#2a1214;border-radius:12px;padding:14px 18px;
+  align-items:center;gap:16px;flex-wrap:wrap}
+#operator.show{display:flex}
+#operator .what{font-size:20px;font-weight:700}
+#operator .why{color:#fecaca}
+#operator .actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+#operator button{background:#3a1a1d;border-color:#7f1d1d;font-weight:600}
+#operator button.primary{background:var(--red);border-color:var(--red);color:#fff}
+
+/* the line */
+.line{display:grid;grid-template-columns:1fr auto 1.2fr auto 2fr auto 1fr;align-items:stretch;gap:10px}
+.station{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;min-height:150px;display:flex;flex-direction:column}
+.station h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.arrow{align-self:center;color:#4b5563;font-size:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ring{display:inline-block;width:22px;height:22px;border-radius:50%;border:6px solid var(--c);flex:none}
+.ring.big{width:46px;height:46px;border-width:12px}
+.chip{display:flex;align-items:center;gap:6px;background:#11151a;border:1px solid var(--line);border-radius:999px;padding:3px 10px 3px 4px;font-size:13px}
+.cell{border-color:#3a4350}
+.cell.active{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+.cell.retry{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber) inset}
+.cell.stop{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+.cellbody{display:flex;gap:14px;align-items:center;flex:1}
+.cellbody .what{font-size:18px;font-weight:700}
+.arm{width:64px;height:64px;flex:none}
+.arm .upper{transform-origin:22px 46px}
+.cell.active .arm .upper{animation:swing 2.4s ease-in-out infinite}
+@keyframes swing{50%{transform:rotate(-14deg)}}
+.bins{display:flex;gap:10px;flex:1}
+.bin{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px}
+.bin .tub{width:100%;max-width:120px;height:78px;border:3px solid var(--c);border-top:none;border-radius:0 0 14px 14px;
+  background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent),transparent);display:flex;align-items:flex-end;justify-content:center;
+  flex-wrap:wrap-reverse;gap:3px;padding:6px;position:relative}
+.bin .tub .ring{width:16px;height:16px;border-width:4px}
+.bin .count{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
+.bin .name{font-size:13px;color:var(--muted)}
+.bin.nomodel{opacity:.45}
+.ship .count{font-size:34px;font-weight:800}
+.progress{margin-top:auto;padding-top:8px;font-size:13px;color:var(--muted)}
+.spot{font-size:11px;font-weight:700;padding:1px 6px;border-radius:4px;margin-left:2px}
+.spot-center{background:#123d22;color:var(--green)}.spot-edge{background:#3d2e0b;color:var(--amber)}
+.spot-outside{background:#3d1214;color:var(--red)}.spot-{background:#252b34;color:var(--muted)}
+.seen{font-size:12px;color:var(--blue)}.seen.bad{color:var(--red)}
+.camtag{font-size:11px;font-weight:700;letter-spacing:.6px;color:var(--blue);margin-left:6px}
+.align{font-size:12px;padding:3px 8px;border-radius:5px;background:#252b34;color:var(--muted)}
+.align.ALIGNED{background:#123d22;color:var(--green)}.align.CLOSE{background:#3d2e0b;color:var(--amber)}
+.align.OFF,.align.NO\ LOCK{background:#3d1214;color:var(--red)}
+
+/* panels */
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px}
+.cams{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cam{position:relative;background:#000;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.cam img,.cam video{width:100%;height:100%;object-fit:cover;display:block}
+.cam .tag{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.65);padding:2px 8px;border-radius:5px;font-size:12px}
+.cam .tag b{color:var(--red)}
+.cam .cover{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:20px;
+  background:rgba(10,12,15,.78);font-weight:600}
+.cam.off .cover{display:flex}
+.cam.off img{filter:grayscale(1) brightness(.5)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.orders{display:grid;gap:8px}
+.orders button{text-align:left;display:flex;align-items:center;gap:10px;padding:10px 12px}
+.orders button b{font-size:16px}
+.models{display:grid;gap:6px;margin-top:6px}
+.models label{display:flex;align-items:center;gap:8px}
+.models select{margin-left:auto}
+.verdict{display:inline-block;font-size:22px;font-weight:800;padding:4px 12px;border-radius:8px;letter-spacing:.5px}
+.v-placed,.v-held{background:#123d22;color:var(--green)}
+.v-missed{background:#3d2e0b;color:var(--amber)}
+.v-dropped,.v-error{background:#3d1214;color:var(--red)}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px}
+.kpi .n{font-size:28px;font-weight:800;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.log{list-style:none;margin:0;padding:0;max-height:330px;overflow:auto;font-size:13px}
+.log li{padding:5px 0;border-bottom:1px solid #20262f;display:flex;gap:8px}
+.log time{color:var(--muted);font-variant-numeric:tabular-nums;flex:none}
+.log .good{color:#86efac}.log .warn{color:#fcd34d}.log .bad{color:#fca5a5}
+.clips{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.clip{background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.clip video{width:100%;aspect-ratio:1280/552;background:#000;display:block}
+.clip .meta{padding:10px 12px;display:flex;gap:10px;align-items:center}
+.clip .meta .v{font-size:12px;font-weight:800;padding:2px 8px;border-radius:5px}
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#3d1214;border:1px solid var(--red);padding:10px 16px;border-radius:8px;display:none}
+
+@media (max-width:1100px){
+  .line{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);justify-self:center}
+  .grid,.grid3{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  main{padding:12px 16px}
+  header{flex-wrap:wrap;padding:12px 16px}
+  .cams{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="tower" aria-hidden="true"><i class="r" id="t-r"></i><i class="a" id="t-a"></i><i class="g" id="t-g"></i></div>
+  <div class="brand">RingSort<span>Sorting cell 01</span></div>
+  <span class="badge" id="fake" hidden>REHEARSAL · NO ROBOT</span>
+  <div class="status" id="status">Connecting…</div>
+  <div class="clock"><div id="clock"></div><div class="small" id="shift"></div></div>
+</header>
+
+<main>
+  <section id="operator" role="alert">
+    <div>
+      <div class="what" id="op-what"></div>
+      <div class="why" id="op-why"></div>
+    </div>
+    <div class="actions">
+      <button class="primary" data-choice="retry">Retry pick</button>
+      <button data-choice="placed by hand">Placed by hand</button>
+      <button data-choice="skip">Skip part</button>
+      <button data-choice="cancel">Cancel order</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Line</h2>
+    <div class="line">
+      <div class="station">
+        <h3>Incoming parts<span class="camtag" id="camtag" hidden>CAMERA</span></h3>
+        <div class="chips" id="incoming"></div>
+        <div class="progress" id="rejects"></div>
+      </div>
+      <div class="arrow">➜</div>
+      <div class="station cell" id="cell">
+        <h3>Sorting cell</h3>
+        <div class="cellbody">
+          <svg class="arm" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="10" y="54" width="26" height="6" rx="2" fill="#4b5563"/>
+            <rect x="19" y="44" width="8" height="12" rx="2" fill="#9ca3af"/>
+            <g class="upper">
+              <rect x="19" y="18" width="7" height="30" rx="3" fill="#e5e7eb" transform="rotate(18 22 46)"/>
+              <rect x="26" y="12" width="26" height="6" rx="3" fill="#e5e7eb"/>
+              <path d="M50 12 l6 -4 M50 18 l6 4" stroke="#f5c518" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </svg>
+          <div>
+            <div class="what" id="cell-what">Idle</div>
+            <div class="muted small" id="cell-sub"></div>
+          </div>
+        </div>
+        <div class="progress" id="order-progress"></div>
+      </div>
+      <div class="arrow">➜</div>
+      <div class="station">
+        <h3>Bins</h3>
+        <div class="bins" id="bins"></div>
+      </div>
+      <div class="arrow">➜</div>
+      <div class="station ship">
+        <h3>To packing</h3>
+        <div class="count" id="shipped">0</div>
+        <div class="muted small">parts sent on this shift</div>
+        <div class="progress"><button id="ship">Send bins to packing</button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="row" style="justify-content:space-between;margin-bottom:10px">
+        <h2 style="margin:0">Cameras</h2>
+        <span class="align" id="align" hidden></span>
+        <span class="row"><button id="partsview" class="small">Parts view: on</button>
+        <button id="campause" class="small">Pause live view</button></span>
+      </div>
+      <div class="cams" id="cams"></div>
+    </section>
+
+    <section class="card">
+      <h2>Work orders</h2>
+      <div class="orders" id="orders"></div>
+      <div class="row" style="margin-top:10px"><button id="stop" hidden>Stop after this part</button></div>
+      <h2 style="margin-top:16px">Model per part</h2>
+      <div class="models" id="models"></div>
+    </section>
+  </div>
+
+  <div class="grid3">
+    <section class="card">
+      <h2>Last pick, from the cell's recording</h2>
+      <div id="last"><p class="muted">No picks yet on this shift.</p></div>
+    </section>
+    <section class="card">
+      <h2>Shift numbers</h2>
+      <div class="kpis" id="kpis"></div>
+      <p class="muted small" id="alltime"></p>
+    </section>
+    <section class="card">
+      <h2>Event log</h2>
+      <ul class="log" id="log"></ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="row" style="justify-content:space-between;margin-bottom:10px">
+      <h2 style="margin:0">Recorded picks</h2>
+      <span class="muted small">Captioned clips in media/ · they pause while the arm is picking</span>
+    </div>
+    <div class="clips" id="clips"></div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+// Only touch the DOM when something changed: keeps clicks from landing on replaced
+// buttons and keeps the browser idle while the arm is picking.
+const setHTML = (el, html) => { if(el._html !== html){ el._html = html; el.innerHTML = html; } };
+const ring = (c, cls='') => `<span class="ring ${cls}" style="--c:${esc(c)}"></span>`;
+let S = null, modelsKey = '', camsKey = '', lastRun = '', clipsKey = '', chosen = {}, partsView = true;
+const SEEN_ORDER = "What's on the table";
+const SPOT = {center:'ready', edge:'near edge', outside:'outside taught area', '':'seen'};
+
+function toast(text){const t=$('toast');t.textContent=text;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',5000)}
+async function post(path, body={}){
+  const r = await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const j = await r.json().catch(()=>({}));
+  if(!r.ok) toast(j.error || 'Request failed');
+  poll(true);
+}
+
+function binSeen(k){
+  // What the stand camera sees in this bin (only bins it can see into are listed in config.json).
+  if(!S.seen || !S.seen.fresh) return '';
+  const inside = S.seen.parts.filter(p => p.where==='bin' && p.bin===k);
+  const wrong = inside.filter(p => p.item!==k);
+  if(!inside.length) return '';
+  return `<div class="seen${wrong.length?' bad':''}">camera sees ${inside.length}${wrong.length?' · '+wrong.length+' wrong part':''}</div>`;
+}
+// Camera-guided replay is listed last and shown as model 000000 (no training).
+const modelName = m => m === 'replay' ? '000000' : esc(m);
+const menuOrder = models => [...models.filter(m => m !== 'replay'), ...models.filter(m => m === 'replay')];
+function item(name){return S.items[name] || {label:name,color:'#888',models:[]}}
+function pct(a,b){return b ? Math.round(100*a/b)+'%' : '—'}
+
+function render(){
+  const a = S.andon;
+  $('status').textContent = a.text;
+  $('t-r').className = 'r' + (a.light==='red' ? ' on blink' : '');
+  $('t-a').className = 'a' + (a.light==='amber' ? ' on' : '');
+  $('t-g').className = 'g' + (a.light==='green' ? ' on' : '');
+  $('fake').hidden = !S.fake;
+  $('shift').textContent = `shift since ${S.stats.shift_start}`;
+
+  // operator call
+  const q = S.question;
+  $('operator').classList.toggle('show', !!q);
+  if(q){
+    $('op-what').textContent = `Operator needed: ${q.label || q.item || ''} ${q.outcome ? '· '+q.outcome.toUpperCase() : ''}`;
+    $('op-why').textContent = q.reason ? q.reason[0].toUpperCase()+q.reason.slice(1)+'.' : '';
+    document.querySelectorAll('#operator button').forEach(b => b.hidden = !q.choices.includes(b.dataset.choice));
+  }
+
+  // line
+  const o = S.order, running = o && o.state==='running';
+  const parts = o ? o.parts : [];
+  const queued = running ? parts.filter((p, i) => p.status==='queued' && i!==S.part_index) : [];
+  const seen = S.seen || {parts:[]}, seenOn = !running && seen.fresh;
+  const onTable = seen.parts.filter(p => p.where==='table');
+  $('camtag').hidden = !seenOn;
+  setHTML($('incoming'), running
+    ? (queued.length ? queued.map(p => `<span class="chip">${ring(item(p.item).color)}${esc(item(p.item).label)}</span>`).join('') : '<span class="muted small">All parts taken</span>')
+    : seen.dark ? '<span class="muted small">Too dark for the camera to see parts</span>'
+    : seenOn ? (onTable.length ? onTable.map(p => `<span class="chip">${ring(item(p.item).color)}${esc(item(p.item).label)}<span class="spot spot-${p.spot}">${SPOT[p.spot]}</span></span>`).join('')
+                                : '<span class="muted small">The camera sees no parts on the table</span>')
+    : '<span class="muted small">Waiting for a work order</span>');
+  const rejects = parts.filter(p => p.status==='skipped' || p.status==='cancelled');
+  $('rejects').textContent = rejects.length ? `Not sorted: ${rejects.map(p => item(p.item).label+' ('+p.status+')').join(', ')}` : '';
+
+  const cell = $('cell'), p = S.part;
+  cell.className = 'station cell' + (q ? ' stop' : p && (p.status==='retrying' || p.attempt>1) ? ' retry' : p ? ' active' : '');
+  if(p){
+    const verb = {picking:'Picking', retrying:'Retrying', checking:'Checking', operator:'Waiting for operator', queued:'Getting ready'}[p.status] || p.status;
+    setHTML($('cell-what'), `${ring(item(p.item).color)} ${esc(verb)} ${esc(item(p.item).label)}`);
+    $('cell-sub').textContent = `attempt ${p.attempt || 1} · model ${modelName(p.label)}` + (S.picking_s!=null ? ` · ${S.picking_s} s` : '');
+  } else {
+    setHTML($('cell-what'), running ? 'Starting' : 'Idle');
+    $('cell-sub').textContent = running ? '' : 'Arm at rest';
+  }
+  if(o){
+    const done = parts.filter(p => p.status.startsWith('sorted')).length;
+    $('order-progress').textContent = `Order ${o.id} · ${o.name} · ${done} of ${parts.length} sorted` + (o.state==='finished' ? ` · finished ${o.finished}` : '') + (S.stop_requested ? ' · stopping' : '');
+  } else $('order-progress').textContent = '';
+
+  setHTML($('bins'), Object.entries(S.items).map(([k,it]) => {
+    const n = S.bins[k] || 0;
+    const none = !it.models.length && !S.fake;
+    return `<div class="bin${none?' nomodel':''}" style="--c:${esc(it.color)}">
+      <div class="count">${n}</div>
+      <div class="tub">${Array.from({length:Math.min(n,12)},()=>ring(it.color)).join('')}</div>
+      <div class="name">${esc(it.label)}${none?' · no model':''}</div>${binSeen(k)}</div>`;
+  }).join(''));
+  $('shipped').textContent = S.shipped;
+  $('ship').disabled = !Object.values(S.bins).some(n => n>0);
+
+  // work orders
+  const seenItems = Object.keys(S.items).flatMap(k => onTable.filter(p => p.item===k).map(() => k));
+  const kits = Object.entries(S.kits);
+  if(seenOn && seenItems.length) kits.unshift([SEEN_ORDER, seenItems]);
+  setHTML($('orders'), kits.map(([name, items]) => {
+    const missing = items.filter(i => !S.fake && !(chosen[i] || menuOrder(item(i).models)[0]));
+    return `<button data-kit="${esc(name)}" ${running||missing.length?'disabled':''} title="${missing.length?'No model for '+esc(missing.join(', ')):''}">
+      <span class="chips">${items.map(i => ring(item(i).color)).join('')}</span>
+      <span><b>${esc(name)}</b><br><span class="muted small">${esc(items.map(i => item(i).label).join(' → '))}</span></span></button>`;
+  }).join(''));
+  $('stop').hidden = !running || S.stop_requested;
+
+  const key = JSON.stringify(Object.fromEntries(Object.entries(S.items).map(([k,v]) => [k, v.models])));
+  if(key !== modelsKey){
+    modelsKey = key;
+    $('models').innerHTML = Object.entries(S.items).map(([k,it]) => `<label>${ring(it.color)} ${esc(it.label)}
+      <select data-item="${esc(k)}">${it.models.length ? menuOrder(it.models).map(m => `<option value="${esc(m)}" ${chosen[k]===m?'selected':''} ${m==='replay'?'title="000000: no training, camera-guided replay of the nearest demonstration"':''}>${modelName(m)}</option>`).join('') : '<option value="">no model or takes</option>'}</select></label>`).join('');
+    document.querySelectorAll('#models select').forEach(s => { chosen[s.dataset.item] = s.value; s.onchange = () => { chosen[s.dataset.item] = s.value; render(); }; });
+  }
+
+  // cameras
+  const c = S.cameras;
+  if(c.names.join() !== camsKey){
+    camsKey = c.names.join();
+    $('cams').innerHTML = c.names.length ? c.names.map(n => `<div class="cam" id="box-${n}"><img id="cam-${n}" alt="${n} camera">
+      <span class="tag">${n==='front'?'Stand camera':n==='wrist'?'Gripper camera':esc(n)} <b id="live-${n}">● LIVE</b></span>
+      <div class="cover" id="cover-${n}"></div></div>`).join('') : '<p class="muted">No cameras configured.</p>';
+  }
+  const why = c.picking ? 'Cameras handed to the robot for this pick. Live view returns right after.'
+            : c.paused ? 'Live view paused. The cameras are free for recording or try_model.sh.' : '';
+  c.names.forEach(n => {
+    const box = $('box-'+n); if(!box) return;
+    const err = c.errors[n];
+    box.classList.toggle('off', !c.live || !!err);
+    $('cover-'+n).textContent = why || err || 'Starting camera…';
+    $('live-'+n).style.visibility = c.live && !err ? 'visible' : 'hidden';
+  });
+  const cam = seen.camera;
+  $('align').hidden = !cam || !seenOn;
+  if(cam){
+    $('align').className = 'align ' + cam.state;
+    $('align').textContent = !cam.best ? 'Camera position unknown'
+      : cam.state==='ALIGNED' ? `Camera matches ${cam.best}'s takes (${cam.ring_px} px)`
+      : cam.state==='CLOSE' ? `Camera ${cam.ring_px} px from ${cam.best}'s takes`
+      : `Camera moved ${cam.ring_px} px: scripts/align_camera.sh ${cam.best}`;
+    $('align').title = Object.entries(cam.by_item || {}).map(([k,v]) => `${k}'s takes: ${v.ring_px} px, ${v.rot_deg}°`).join(' · ');
+  }
+  $('partsview').textContent = 'Parts view: ' + (partsView ? 'on' : 'off');
+  $('partsview').disabled = !c.live;
+  $('campause').textContent = c.paused ? 'Resume live view' : 'Pause live view';
+  $('campause').disabled = c.picking;
+
+  // last pick: videos never play while the arm is picking
+  const L = S.last_pick;
+  if(L && L.run !== lastRun){
+    lastRun = L.run;
+    $('last').innerHTML = `<div class="row" style="margin-bottom:8px"><span class="verdict v-${esc(L.outcome)}">${esc(L.outcome.toUpperCase())}</span>
+      <div><b>${ring(item(L.item).color)} ${esc(L.label)}</b> · attempt ${L.attempt}<br><span class="muted small">${esc(L.reason)} · ${L.seconds} s · ${esc(L.time)}</span>${L.model ? `<br><span class="muted small">${esc(L.model.startsWith('camera replay') ? 'model 000000 · ' + L.model : 'model '+L.model.split('/').slice(-2,-1)[0])}</span>` : ''}</div></div>
+      ${L.videos.length && L.run ? `<div class="row" style="margin-bottom:8px"><button id="keep" data-run="${esc(L.run)}" class="small">Keep this clip</button></div>` : ''}
+      <div class="cams">${L.videos.length ? L.videos.map(cam => `<div class="cam"><video muted loop playsinline preload="auto" src="/video?run=${encodeURIComponent(L.run)}&cam=${cam}"></video>
+      <span class="tag">${cam==='front'?'Stand camera':'Gripper camera'} · recorded</span></div>`).join('') : '<p class="muted">No recording for this pick.</p>'}</div>`;
+  }
+  document.querySelectorAll('#last video').forEach(v => { if(c.picking){ if(!v.paused) v.pause(); } else if(v.paused) v.play().catch(()=>{}); });
+  if($('keep')){
+    const kept = S.clips.some(k => k.source === L.run);
+    $('keep').disabled = running || kept;
+    $('keep').textContent = kept ? 'Kept in Recorded picks' : 'Keep this clip';
+  }
+
+  // recorded picks: never playing while the arm is picking
+  const ck = JSON.stringify(S.clips.map(k => k.id));
+  if(ck !== clipsKey){
+    clipsKey = ck;
+    // Grouped by part, earliest training step first, so each row shows the improvement with training.
+    const step = k => { const m = /step ([\d,]+)/.exec(k.method || ''); return m ? parseInt(m[1].replace(/,/g, ''), 10) : 0; };
+    const ordered = S.clips.slice().sort((a, b) => (b.demo ? 1 : 0) - (a.demo ? 1 : 0) || a.item.localeCompare(b.item) || step(a) - step(b) || a.recorded.localeCompare(b.recorded));
+    $('clips').innerHTML = S.clips.length ? ordered.map(k => `<div class="clip">
+      <video controls muted playsinline preload="none" poster="/${esc(k.poster)}" src="/${esc(k.video)}"></video>
+      <div class="meta">${k.demo ? '<span class="v" style="background:#F2C230;color:#15191F">DEMO</span>' : ''}<span class="v v-${esc(k.verdict)}">${esc(k.verdict.toUpperCase())}</span>
+      <div><b>${ring(item(k.item).color)} ${esc(item(k.item).label)}</b><br><span class="muted small">${esc(k.method)} · ${esc(k.recorded.replace('T',' '))} · ${k.duration_s} s</span></div></div></div>`).join('')
+      : '<p class="muted">No clips yet. Press "Keep this clip" on a good pick, or run python -m kitcheck.clips add &lt;run folder&gt;.</p>';
+  }
+  if(c.picking) document.querySelectorAll('#clips video').forEach(v => { if(!v.paused) v.pause(); });
+
+  // numbers
+  const s = S.stats.shift;
+  setHTML($('kpis'), [
+    [s.parts_ok, 'Parts sorted'],
+    [pct(s.first_ok, s.first), 'First-pass yield'],
+    [pct(s.parts_ok, s.parts), 'Yield with retry'],
+    [S.stats.operator_calls, 'Operator calls'],
+    [s.cycle_s!=null ? s.cycle_s+' s' : '—', 'Avg pick cycle'],
+    [s.picks, 'Pick attempts'],
+  ].map(([n,l]) => `<div class="kpi"><div class="n">${esc(n)}</div><div class="l">${l}</div></div>`).join(''));
+  const t = S.stats.all;
+  $('alltime').textContent = t.picks ? `All runs logged: first try ${t.first_ok} of ${t.first}; with retry ${t.parts_ok} of ${t.parts} parts.` : '';
+
+  setHTML($('log'), S.events.map(e => `<li class="${e.level}"><time>${e.time}</time><span>${esc(e.text)}</span></li>`).join(''));
+}
+
+let polling = false;
+async function poll(once){
+  if(polling && once) { setTimeout(()=>poll(true),100); return; }
+  polling = true;
+  try { const r = await fetch('/state'); S = await r.json(); render(); }
+  catch(e){ $('status').textContent = 'Station offline'; }
+  polling = false;
+}
+setInterval(poll, 500);
+poll();
+
+async function camLoop(name){
+  for(;;){
+    if(S && S.cameras.live && !S.cameras.errors[name] && $('cam-'+name)){
+      try{
+        const r = await fetch(`/cam?name=${name}${partsView && name==='front' ? '&parts=1' : ''}&t=${Date.now()}`);
+        if(r.ok){
+          const url = URL.createObjectURL(await r.blob());
+          const img = $('cam-'+name), old = img.src;
+          img.src = url;
+          if(old.startsWith('blob:')) URL.revokeObjectURL(old);
+        }
+      }catch(e){}
+      await sleep(100);
+    } else await sleep(400);
+  }
+}
+['front','wrist'].forEach(camLoop);
+
+setInterval(() => { $('clock').textContent = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }, 1000);
+
+document.addEventListener('click', e => {
+  const k = e.target.closest('[data-kit]');
+  if(k && !k.disabled){
+    const labels = Object.fromEntries(Object.keys(S.items).map(i => [i, chosen[i] || menuOrder(item(i).models)[0] || '']));
+    post('/order', {kit: k.dataset.kit, labels});
+  }
+  const kb = e.target.closest('#keep');
+  if(kb && !kb.disabled){ kb.disabled = true; kb.textContent = 'Making the clip…'; post('/clips', {run: kb.dataset.run}); }
+  const c = e.target.closest('[data-choice]');
+  if(c) post('/answer', {choice: c.dataset.choice});
+});
+$('stop').onclick = () => post('/stop');
+$('ship').onclick = () => post('/ship');
+$('campause').onclick = () => post('/cameras', {paused: !S.cameras.paused});
+$('partsview').onclick = () => { partsView = !partsView; render(); };
+</script>
+</body>
+</html>
