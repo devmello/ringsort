@@ -1,0 +1,609 @@
+INFO 2026-10-10 21:21:40 t_record.py:388 {'dataset': {'depth_encoder': {'crf': 30,
+                               'depth_max': 10.0,
+                               'depth_min': 0.01,
+                               'extra_options': {'x265-params': 'lossless=1'},
+                               'fast_decode': 0,
+                               'g': 2,
+                               'pix_fmt': 'gray12le',
+                               'preset': None,
+                               'shift': 3.5,
+                               'use_log': True,
+                               'vcodec': 'hevc',
+                               'video_backend': 'pyav'},
+             'encoder_queue_maxsize': 30,
+             'encoder_threads': None,
+             'episode_time_s': 20,
+             'fps': 30,
+             'no_stamp': False,
+             'num_episodes': 50,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': None,
+             'push_to_hub': False,
+             'repo_id': 'varunsatish2017/kitcheck_pick_teal',
+             'reset_time_s': 3600,
+             'rgb_encoder': {'crf': 30,
+                             'extra_options': {},
+                             'fast_decode': 0,
+                             'g': 2,
+                             'pix_fmt': 'yuv420p',
+                             'preset': 12,
+                             'vcodec': 'libsvtav1',
+                             'video_backend': 'pyav'},
+             'root': '/home/amd-genai1/kitcheck_data/pick_teal',
+             'single_task': 'Pick the teal ring and drop it in the teal cup',
+             'streaming_encoding': False,
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_compressed_images': True,
+ 'display_data': True,
+ 'display_ip': '127.0.0.1',
+ 'display_mode': 'rerun',
+ 'display_port': 9876,
+ 'play_sounds': True,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'backend': <Cv2Backends.ANY: 0>,
+                                 'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fourcc': None,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': PosixPath('/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0'),
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'wrist': {'backend': <Cv2Backends.ANY: 0>,
+                                 'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fourcc': 'MJPG',
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': PosixPath('/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0'),
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640}},
+           'disable_torque_on_disconnect': True,
+           'id': 'follower',
+           'max_relative_target': None,
+           'num_read_retries': 10,
+           'port': '/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C124442-if00',
+           'position_d_coefficient': 32,
+           'position_i_coefficient': 0,
+           'position_p_coefficient': 16,
+           'use_degrees': True},
+ 'teleop': {'calibration_dir': None,
+            'id': 'leader',
+            'num_read_retries': 2,
+            'port': '/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C123870-if00',
+            'use_degrees': True}}
+INFO 2026-10-10 21:21:40 so_leader.py:78 leader SOLeader connected.
+INFO 2026-10-10 21:21:47 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) connected.
+INFO 2026-10-10 21:21:48 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) connected.
+INFO 2026-10-10 21:21:48 follower.py:109 follower SOFollower connected.
+INFO 2026-10-10 21:21:48 rd_input.py:385 Using terminal keyboard input — keep this terminal focused (Right/Left/Esc, or n=next, r=re-record, q=quit).
+INFO 2026-10-10 21:21:48 t_record.py:489 Streaming encoding is disabled. If you have capable hardware, consider enabling it for way faster episode saving. --dataset.streaming_encoding=true --dataset.encoder_threads=2 # --dataset.rgb_encoder.vcodec=auto. More info in the documentation: https://huggingface.co/docs/lerobot/streaming_video_encoding
+INFO 2026-10-10 21:21:48 ls/utils.py:147 Recording episode 0
+
+============================================================================
+  WAITING (not recording). Ring on its spot, both arms at rest.    ->  start recording    Esc  finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  RECORDING take 1 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:25:28 ls/utils.py:147 Reset the environment
+Left arrow key pressed. Exiting loop and rerecord the last episode...
+
+============================================================================
+  WAITING (not recording). That take will be thrown away.    ->  start the next take    Esc  finish
+============================================================================
+INFO 2026-10-10 21:25:55 ls/utils.py:147 Re-record episode
+INFO 2026-10-10 21:25:55 ls/utils.py:147 Recording episode 0
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  RECORDING take 1 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:25:55 le_timer.py:559 Cadence (discarded episode): 29.68 Hz vs 30 Hz target · 439 ticks, 14.8 s measured · 0/438 ticks over the 33.3 ms budget (work mean 6.7 ms, worst 10.9 ms)
+INFO 2026-10-10 21:26:08 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/367 [00:00<?, ? examples/s]Map: 100%|██████████| 367/367 [00:00<00:00, 7279.50 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+INFO 2026-10-10 21:26:30 ls/utils.py:147 Recording episode 1
+
+============================================================================
+  RECORDING take 2 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:26:30 le_timer.py:559 Cadence (episode 0): 29.68 Hz vs 30 Hz target · 367 ticks, 12.3 s measured · 0/366 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 10.0 ms)
+INFO 2026-10-10 21:26:41 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/324 [00:00<?, ? examples/s]Map: 100%|██████████| 324/324 [00:00<00:00, 7356.12 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5e186e80] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5e123200] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:27:14 ls/utils.py:147 Recording episode 2
+
+============================================================================
+  RECORDING take 3 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:27:14 le_timer.py:559 Cadence (episode 1): 29.68 Hz vs 30 Hz target · 324 ticks, 10.9 s measured · 0/323 ticks over the 33.3 ms budget (work mean 6.5 ms, worst 10.1 ms)
+INFO 2026-10-10 21:27:21 ls/utils.py:147 Reset the environment
+Left arrow key pressed. Exiting loop and rerecord the last episode...
+
+============================================================================
+  WAITING (not recording). That take will be thrown away.    ->  start the next take    Esc  finish
+============================================================================
+INFO 2026-10-10 21:27:29 ls/utils.py:147 Re-record episode
+INFO 2026-10-10 21:27:29 ls/utils.py:147 Recording episode 2
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  RECORDING take 3 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:27:29 le_timer.py:559 Cadence (discarded episode): 29.70 Hz vs 30 Hz target · 221 ticks, 7.4 s measured · 0/220 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 9.5 ms)
+INFO 2026-10-10 21:27:43 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/401 [00:00<?, ? examples/s]Map: 100%|██████████| 401/401 [00:00<00:00, 7488.73 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5e105d40] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5e18a600] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:28:00 ls/utils.py:147 Recording episode 3
+
+============================================================================
+  RECORDING take 4 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:28:00 le_timer.py:559 Cadence (episode 2): 29.69 Hz vs 30 Hz target · 401 ticks, 13.5 s measured · 0/400 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 10.2 ms)
+INFO 2026-10-10 21:28:08 ls/utils.py:147 Reset the environment
+Left arrow key pressed. Exiting loop and rerecord the last episode...
+
+============================================================================
+  WAITING (not recording). That take will be thrown away.    ->  start the next take    Esc  finish
+============================================================================
+INFO 2026-10-10 21:28:21 ls/utils.py:147 Re-record episode
+INFO 2026-10-10 21:28:21 ls/utils.py:147 Recording episode 3
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  RECORDING take 4 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:28:21 le_timer.py:559 Cadence (discarded episode): 29.68 Hz vs 30 Hz target · 236 ticks, 7.9 s measured · 0/235 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 9.5 ms)
+INFO 2026-10-10 21:28:32 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/331 [00:00<?, ? examples/s]Map: 100%|██████████| 331/331 [00:00<00:00, 7363.50 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5df0cf00] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5e1fc980] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:28:50 ls/utils.py:147 Recording episode 4
+
+============================================================================
+  RECORDING take 5 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:28:50 le_timer.py:559 Cadence (episode 3): 29.71 Hz vs 30 Hz target · 331 ticks, 11.1 s measured · 0/330 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 9.7 ms)
+INFO 2026-10-10 21:29:02 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/342 [00:00<?, ? examples/s]Map: 100%|██████████| 342/342 [00:00<00:00, 7364.43 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5df05c40] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5df49f00] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:29:18 ls/utils.py:147 Recording episode 5
+
+============================================================================
+  RECORDING take 6 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:29:18 le_timer.py:559 Cadence (episode 4): 29.70 Hz vs 30 Hz target · 342 ticks, 11.5 s measured · 0/341 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 10.1 ms)
+INFO 2026-10-10 21:29:29 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/327 [00:00<?, ? examples/s]Map: 100%|██████████| 327/327 [00:00<00:00, 7410.87 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5e1b3340] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5dfc48c0] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:29:41 ls/utils.py:147 Recording episode 6
+
+============================================================================
+  RECORDING take 7 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:29:41 le_timer.py:559 Cadence (episode 5): 29.69 Hz vs 30 Hz target · 327 ticks, 11.0 s measured · 0/326 ticks over the 33.3 ms budget (work mean 6.5 ms, worst 9.2 ms)
+INFO 2026-10-10 21:29:52 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Right arrow key pressed. Exiting loop...
+Map:   0%|          | 0/324 [00:00<?, ? examples/s]Map: 100%|██████████| 324/324 [00:00<00:00, 7382.29 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5df0cf40] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5df103c0] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:30:09 ls/utils.py:147 Recording episode 7
+
+============================================================================
+  RECORDING take 8 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:30:09 le_timer.py:559 Cadence (episode 6): 29.69 Hz vs 30 Hz target · 324 ticks, 10.9 s measured · 0/323 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 10.4 ms)
+INFO 2026-10-10 21:30:19 ls/utils.py:147 Reset the environment
+Left arrow key pressed. Exiting loop and rerecord the last episode...
+
+============================================================================
+  WAITING (not recording). That take will be thrown away.    ->  start the next take    Esc  finish
+============================================================================
+INFO 2026-10-10 21:30:36 ls/utils.py:147 Re-record episode
+INFO 2026-10-10 21:30:36 ls/utils.py:147 Recording episode 7
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  RECORDING take 8 (stops by itself after 20 s)    ->  stop and keep    <-  stop and throw away    Esc  keep it and finish
+============================================================================
+INFO 2026-10-10 21:30:36 le_timer.py:559 Cadence (discarded episode): 29.68 Hz vs 30 Hz target · 293 ticks, 9.8 s measured · 0/292 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 9.9 ms)
+INFO 2026-10-10 21:30:49 ls/utils.py:147 Reset the environment
+Right arrow key pressed. Exiting loop...
+
+============================================================================
+  WAITING (not recording)    ->  keep that take and start the next    <-  throw that take away    Esc  keep it and finish
+============================================================================
+Escape key pressed. Stopping data recording...
+Map:   0%|          | 0/378 [00:00<?, ? examples/s]Map: 100%|██████████| 378/378 [00:00<00:00, 7399.95 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x573f5df6de00] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 0x573f5df6de00] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-10-10 21:31:15 le_timer.py:559 Cadence (episode 7): 29.68 Hz vs 30 Hz target · 378 ticks, 12.7 s measured · 0/377 ticks over the 33.3 ms budget (work mean 6.6 ms, worst 9.3 ms)
+INFO 2026-10-10 21:31:15 le_timer.py:606 Cadence summary — whole run, 12 episodes · target 30 Hz (33.3 ms budget per tick): 3983 ticks, 3971 judged
+  effective cadence: 29.69 Hz over 133.8 s measured
+  ticks over the 33.3 ms work budget: 0/3971 (0.0%) — work mean 6.6 ms, worst 10.9 ms
+  ticks whose cadence slipped outside the loop body (sleep overshoot / CPU starvation while pacing): 2167
+  loop-body steps (share of measured work):
+    observe      mean   1.54 ms · worst   3.04 ms ·  23.3% of work · 3983 calls
+    process_obs  mean   0.07 ms · worst   0.25 ms ·   1.0% of work · 3983 calls
+    teleop       mean   1.16 ms · worst   2.37 ms ·  17.6% of work · 3983 calls
+    send         mean   0.22 ms · worst   2.13 ms ·   3.4% of work · 3983 calls
+    record       mean   0.17 ms · worst   0.64 ms ·   2.6% of work · 3983 calls
+    telemetry    mean   3.37 ms · worst   9.53 ms ·  51.0% of work · 3983 calls
+  pacing headroom: 27.0 ms slept per tick on average (max 29.4 ms) — near zero means the loop is saturated
+INFO 2026-10-10 21:31:15 ls/utils.py:147 Stop recording
+INFO 2026-10-10 21:31:22 a_opencv.py:631 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) disconnected.
+INFO 2026-10-10 21:31:22 a_opencv.py:631 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) disconnected.
+INFO 2026-10-10 21:31:22 follower.py:238 follower SOFollower disconnected.
+INFO 2026-10-10 21:31:22 o_leader.py:163 leader SOLeader disconnected.
+INFO 2026-10-10 21:31:22 ls/utils.py:147 Exiting

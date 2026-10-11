@@ -1,0 +1,76 @@
+{
+ "clips": [
+  {
+   "id": "teal_replay_20261011_104134",
+   "title": "Teal ring \u00b7 Camera-guided replay",
+   "item": "teal",
+   "method": "Camera-guided replay",
+   "verdict": "placed",
+   "reason": "held the object and let go at its bin",
+   "hold_s": 1.7,
+   "recorded": "2026-10-11T10:41",
+   "duration_s": 8.3,
+   "source": "data/eval/teal_replay_20261011_104134",
+   "video": "media/picks/teal_replay_20261011_104134.mp4",
+   "poster": "media/picks/teal_replay_20261011_104134.jpg",
+   "demo": true
+  },
+  {
+   "id": "purple_replay_20261011_104925",
+   "title": "Purple ring \u00b7 Camera-guided replay",
+   "item": "purple",
+   "method": "Camera-guided replay",
+   "verdict": "placed",
+   "reason": "held the object and let go at its bin",
+   "hold_s": 2.4,
+   "recorded": "2026-10-11T10:49",
+   "duration_s": 10.3,
+   "source": "data/eval/purple_replay_20261011_104925",
+   "video": "media/picks/purple_replay_20261011_104925.mp4",
+   "poster": "media/picks/purple_replay_20261011_104925.jpg",
+   "demo": true
+  },
+  {
+   "id": "red_010000_20261010_192145",
+   "title": "Red ring \u00b7 ACT model, step 10,000",
+   "item": "red",
+   "method": "ACT model, step 10,000",
+   "verdict": "placed",
+   "reason": "held the object and let go at its bin",
+   "hold_s": 2.6,
+   "recorded": "2026-10-10T19:21",
+   "duration_s": 9.4,
+   "source": "data/eval/red_010000_20261010_192145",
+   "video": "media/picks/red_010000_20261010_192145.mp4",
+   "poster": "media/picks/red_010000_20261010_192145.jpg"
+  },
+  {
+   "id": "purple_010000_20261010_204416",
+   "title": "Purple ring \u00b7 ACT model, step 10,000",
+   "item": "purple",
+   "method": "ACT model, step 10,000",
+   "verdict": "placed",
+   "reason": "held the object and let go at its bin",
+   "hold_s": 1.9,
+   "recorded": "2026-10-10T20:44",
+   "duration_s": 10.9,
+   "source": "data/eval/purple_010000_20261010_204416",
+   "video": "media/picks/purple_010000_20261010_204416.mp4",
+   "poster": "media/picks/purple_010000_20261010_204416.jpg"
+  },
+  {
+   "id": "purple_010000_20261010_210212",
+   "title": "Purple ring \u00b7 ACT model, step 10,000",
+   "item": "purple",
+   "method": "ACT model, step 10,000",
+   "verdict": "placed",
+   "reason": "held the object and let go at its bin",
+   "hold_s": 1.5,
+   "recorded": "2026-10-10T21:02",
+   "duration_s": 10.9,
+   "source": "data/eval/purple_010000_20261010_210212",
+   "video": "media/picks/purple_010000_20261010_210212.mp4",
+   "poster": "media/picks/purple_010000_20261010_210212.jpg"
+  }
+ ]
+}

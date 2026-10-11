@@ -1,0 +1,21 @@
+station dashboard: http://127.0.0.1:8078   (Ctrl+C here stops it and frees the cameras)
+
+[purple] attempt 1: picking ...
+[purple] PLACED: held the object and let go at its bin (20 s)
+
+[teal] attempt 1: picking ...
+[teal] MISSED: the gripper never closed on anything (30 s)
+[teal] the ring should still be on its spot: retrying
+
+[teal] attempt 2: picking ...
+[teal] PLACED: held the object and let go at its bin (29 s)
+
+[purple] attempt 1: picking ...
+[purple] MISSED: the gripper never closed on anything (30 s)
+[purple] the ring should still be on its spot: retrying
+
+[purple] attempt 2: picking ...
+[purple] MISSED: the gripper never closed on anything (29 s)
+
+[teal] attempt 1: picking ...
+[teal] PLACED: held the object and let go at its bin (30 s)

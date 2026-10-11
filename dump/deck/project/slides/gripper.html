@@ -1,0 +1,32 @@
+<section id="gripper" data-transition="fade" style="background:#15191F;color:#E9EBEE;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;text-transform:uppercase">The gripper knows when it's holding something</h2>
+<div style="display:flex;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:600">A demonstration: held a ring</p>
+<svg aria-label="Gripper position over 8.8 seconds of a demonstration. Commanded and measured agree until the grasp; then the measured position stays about 13 units above the command for two seconds while the ring is held, until the gripper opens over the bin." width="760" height="360" viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="760" height="360" rx="12" fill="#1F252D"/>
+<line x1="10" y1="345" x2="750" y2="345" stroke="#3A434F" stroke-width="2"/>
+<path d="M440,269 L590,267 L590,343 L440,345 Z" fill="#F2C230" fill-opacity="0.28"/>
+<path d="M10,345 L16,345 L24,345 L33,345 L41,344 L49,345 L58,345 L66,345 L75,344 L83,341 L92,329 L100,314 L108,314 L117,314 L125,314 L134,314 L142,313 L151,313 L159,313 L168,313 L176,313 L184,304 L193,263 L199,238 L207,227 L215,227 L224,227 L232,227 L241,227 L249,227 L258,227 L266,227 L274,227 L283,227 L291,227 L300,227 L308,227 L317,227 L325,227 L334,227 L342,229 L350,231 L359,231 L367,232 L376,233 L381,234 L390,234 L398,234 L407,234 L415,252 L424,289 L432,318 L440,345 L449,345 L457,345 L466,345 L474,345 L483,345 L491,345 L500,345 L508,345 L516,345 L525,345 L533,345 L542,345 L550,345 L559,345 L564,345 L573,345 L581,345 L590,343 L598,294 L607,175 L615,131 L623,168 L632,297 L640,334 L649,345 L657,345 L666,345 L674,345 L682,345 L691,345 L699,345 L708,345 L716,345 L725,345 L733,345 L742,345 L750,345" fill="none" stroke="#A9B2BE" stroke-width="3" stroke-dasharray="10 8"/>
+<path d="M10,338 L16,338 L24,338 L33,338 L41,338 L49,338 L58,338 L66,338 L75,338 L83,338 L92,337 L100,332 L108,321 L117,317 L125,317 L134,317 L142,317 L151,317 L159,317 L168,317 L176,317 L184,317 L193,306 L199,287 L207,251 L215,235 L224,230 L232,229 L241,229 L249,229 L258,229 L266,229 L274,229 L283,229 L291,229 L300,228 L308,228 L317,228 L325,228 L334,228 L342,228 L350,228 L359,228 L367,228 L376,228 L381,229 L390,229 L398,229 L407,229 L415,231 L424,247 L432,267 L440,269 L449,269 L457,269 L466,269 L474,269 L483,270 L491,270 L500,270 L508,270 L516,270 L525,270 L533,270 L542,270 L550,270 L559,270 L564,270 L573,270 L581,270 L590,267 L598,267 L607,266 L615,225 L623,168 L632,164 L640,216 L649,275 L657,323 L666,337 L674,338 L682,338 L691,338 L699,338 L708,338 L716,338 L725,338 L733,338 L742,339 L750,339" fill="none" stroke="#F2C230" stroke-width="5"/>
+</svg>
+<p style="font-size:24px;color:#F2C230">Shaded: the gap while holding (about 13 units, 1.9 s)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:600">A model run: missed</p>
+<svg aria-label="Gripper position over 14.5 seconds of a model run that missed. Commanded and measured stay together the whole time, including when the gripper closes: it closed on nothing." width="760" height="360" viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="760" height="360" rx="12" fill="#1F252D"/>
+<line x1="10" y1="345" x2="750" y2="345" stroke="#3A434F" stroke-width="2"/>
+<path d="M10,215 L17,208 L25,202 L34,199 L42,196 L51,195 L59,196 L68,197 L76,199 L83,201 L92,206 L100,213 L109,229 L117,246 L126,267 L134,288 L143,321 L150,332 L158,343 L167,349 L175,351 L184,352 L192,345 L201,344 L209,340 L216,332 L225,320 L233,308 L242,288 L250,288 L259,277 L267,272 L276,258 L283,253 L291,251 L300,242 L308,242 L317,247 L325,245 L334,249 L342,252 L349,260 L358,253 L366,249 L375,247 L383,240 L392,240 L400,237 L409,237 L416,239 L424,245 L433,251 L441,267 L450,300 L458,325 L467,340 L475,352 L482,353 L491,356 L499,354 L508,347 L516,339 L525,290 L533,308 L542,336 L549,349 L557,355 L566,354 L574,349 L583,346 L591,344 L600,343 L608,343 L615,344 L624,344 L632,344 L641,345 L649,345 L658,347 L666,345 L675,347 L682,348 L690,347 L699,344 L707,342 L716,340 L724,333 L733,321 L741,296 L750,269" fill="none" stroke="#A9B2BE" stroke-width="3" stroke-dasharray="10 8"/>
+<path d="M10,237 L17,229 L25,210 L34,203 L42,201 L51,198 L59,197 L68,197 L76,197 L83,197 L92,198 L100,206 L109,217 L117,234 L126,250 L134,271 L143,297 L150,320 L158,331 L167,335 L175,335 L184,335 L192,335 L201,335 L209,335 L216,335 L225,330 L233,318 L242,305 L250,294 L259,284 L267,277 L276,269 L283,262 L291,254 L300,251 L308,245 L317,245 L325,245 L334,245 L342,247 L349,251 L358,255 L366,254 L375,249 L383,247 L392,241 L400,240 L409,239 L416,239 L424,239 L433,246 L441,254 L450,273 L458,301 L467,328 L475,335 L482,335 L491,335 L499,335 L508,335 L516,335 L525,334 L533,305 L542,314 L549,332 L557,335 L566,335 L574,335 L583,335 L591,335 L600,335 L608,335 L615,335 L624,335 L632,335 L641,335 L649,335 L658,335 L666,335 L675,335 L682,335 L690,335 L699,335 L707,335 L716,335 L724,335 L733,330 L741,315 L750,287" fill="none" stroke="#F2C230" stroke-width="5"/>
+</svg>
+<p style="font-size:24px;color:#A9B2BE">No gap anywhere: it closed on nothing</p>
+</div>
+</div>
+<div style="display:flex;gap:48px">
+<p style="flex:1;font-size:28px;line-height:1.4"><span style="color:#F2C230">Solid</span>: where the gripper got to. Dashed: where it was told to go. Up = more open.</p>
+<p style="flex:1;font-size:28px;line-height:1.4">The hold shows in <b>155 of 155</b> of our demonstrations. Empty grasps simulated on public SO-101 data: <b>20 of 20</b> caught.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#A9B2BE">RingSort · Backup A &#160;&#160;·&#160;&#160; Left: teal demonstration 20. Right: purple ACT run, step 10,000, day 1.</p>
+<aside>Deep dive, 20 s, or keep for questions. "This is the main idea. LeRobot records two numbers for the gripper on every frame: where it was told to go, and where it got to. When it closes on a ring, it can't get there: that shaded gap. When it closes on nothing, the two agree. A gap that vanishes while it's still told to hold means the part slipped. Where the base points when it opens says whether that was over the right bin."</aside>
+</section>

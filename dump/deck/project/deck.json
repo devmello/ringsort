@@ -1,0 +1,21 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-10-11T08:08:01Z"},
+  "lists": "css",
+  "title": "RingSort pitch",
+  "cover": "cover",
+  "order": ["cover", "problem", "mistake", "line", "demo", "checks", "picking", "data", "amd", "close", "numbers-data", "numbers-training", "numbers-grasp", "numbers-camera", "gripper", "camera", "learned"],
+  "sections": {
+    "story": {"description": "The problem and where RingSort sits on a factory line", "start": "cover"},
+    "live": {"description": "The live demo on the station dashboard", "start": "demo"},
+    "how": {"description": "How the cell checks itself and the two ways it picks", "start": "checks"},
+    "close": {"description": "AMD edge to cloud, who uses it, and what comes next", "start": "amd"},
+    "numbers": {"description": "The numbers: training data, training, how the grasp improves, camera drift", "start": "numbers-data"},
+    "backup": {"description": "Backup slides for the three minutes of questions", "start": "gripper"}
+  },
+  "faces": {
+    "oswald": {"family": "Oswald", "href": "https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&display=swap"},
+    "ibm-plex-sans": {"family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"}
+  },
+  "designSystems": []
+}

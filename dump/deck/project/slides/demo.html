@@ -1,0 +1,33 @@
+<section id="demo" data-transition="fade" style="background:#F2C230;color:#15191F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;text-transform:uppercase">Live demo</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:16px;border:3px solid #15191F;border-radius:16px;padding:32px">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1">1</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.25">The cell looks at its table</h3>
+<p style="font-size:24px;line-height:1.4">Every ring found, graded ready or off its mark</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;border:3px solid #15191F;border-radius:16px;padding:32px">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1">2</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.25">A judge starts a work order</h3>
+<p style="font-size:24px;line-height:1.4">Tower light green; cameras handed to the robot</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;border:3px solid #15191F;border-radius:16px;padding:32px">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1">3</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.25">We take a part away</h3>
+<p style="font-size:24px;line-height:1.4">The gripper closes on nothing: MISSED, and the operator is called</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;border:3px solid #15191F;border-radius:16px;padding:32px">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1">4</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.25">The numbers</h3>
+<p style="font-size:24px;line-height:1.4">First-pass yield, yield with retry; bins sent to packing</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px">RingSort · 5</p>
+<aside>0:40–1:55, 75 seconds (Demo, Technical execution). If the live run can't happen, use the clip on slide 3 and the dashboard's Recorded picks instead. On the dashboard (full run-of-show in docs/12-pitch.md). Keep talking while the arm moves; a pick takes about 15 s.
+1. Point at the stand camera: "Before it moves, the cell looks at its table. It finds every ring, and checks it's where the cell was taught to pick it. Green 'ready' means it is."
+2. Hand the judge the mouse: "Pick a work order." Judge taps "What's on the table" or "Sort all". "The light goes green. Notice the camera view stops: the robot needs both cameras, and streaming them slowed it down, so the cell hands them over."
+3. First part: PLACED, bin count goes up, and the cell plays back its own recording of the pick.
+4. Before the arm reaches the next ring, lift it off the table. "Now I'll take the part away." The gripper closes on nothing: MISSED, the light goes red and the operator buttons appear. Put the ring back and tap Retry pick: "It doesn't count a pick it can't confirm."
+5. Point at Shift numbers: "First-pass yield and yield with retry, measured, not claimed." Tap "Send bins to packing."
+If the pick misses for real: that IS the demo. "Watch: it noticed." Let it retry, or answer the operator call.</aside>
+</section>

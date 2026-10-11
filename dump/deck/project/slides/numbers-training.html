@@ -1,0 +1,16 @@
+<section id="numbers-training" data-transition="fade" style="background:#F3F1EA;color:#1A1F26;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;text-transform:uppercase">Training: the loss flattens early, the arm catches up later</h2>
+<div style="display:flex;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:28px;font-weight:600">Training loss, from Weights &amp; Biases</h3>
+<img src="/_blob/701df69133bb0556e1daaeeeb062da73" alt="Training loss on a log scale against training steps for purple, red and teal: all three fall steeply in the first 10,000 steps and flatten near 0.1; purple ends at 0.08 at 54,000 steps, red at 0.07 at 47,000, teal at 0.11 at 24,000; dots mark the checkpoints tested on the arm" style="width:808px;height:364px;object-fit:contain">
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:28px;font-weight:600">Placed on the first try, on the arm</h3>
+<img src="/_blob/5a45d305b28c063695324621c0d4a01f" alt="First-try placement by checkpoint: purple 2 of 33 at 10k, 0 of 10 at 20k, 2 of 3 at 50k; red 0 of 23 at 10k, 0 of 7 at 20k, 1 of 2 at 40k; teal 3 of 5 at 20k" style="width:808px;height:323px;object-fit:contain">
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;width:1600px">The loss is nearly flat by 20,000 steps, but purple and red only started placing at 40,000–50,000. Teal placed at 20,000.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#4F5966">RingSort · The numbers &#160;&#160;·&#160;&#160; Loss smoothed over 5 log points; first tries only; day 1 runs at any ring position, day 2 runs with the ring on its mark</p>
+<aside>For "how long did you train?" or "how do you know it's learning?". "Training loss drops fast and is nearly flat by 20,000 steps, so loss alone would say we were done. The arm said otherwise: purple and red only started placing at 40 to 50 thousand steps. Teal, with the cleanest data, placed at 20,000." Caveat if asked: the later checkpoints have few runs so far, and day 1's runs include rings away from the center.</aside>
+</section>
