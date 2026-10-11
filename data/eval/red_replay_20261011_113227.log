@@ -1,0 +1,75 @@
+/home/amd-genai1/miniforge3/envs/lerobot/bin/python -m kitcheck.replay_run --robot.type=so101_follower --robot.port=/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C124442-if00 --robot.id=follower '--robot.cameras={front: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0, width: 640, height: 480, fps: 30}, wrist: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0, width: 640, height: 480, fps: 30, fourcc: MJPG}}' --robot.num_read_retries=10 --source=/home/amd-genai1/kitcheck_data/pick_red --episode=21 --grasp=141 --release=205 --pan_offset=-2.01 --out=/home/amd-genai1/kitcheck/data/eval/red_replay_20261011_113227 '--task=Pick the red ring and drop it in the red cup'
+
+replaying /home/amd-genai1/kitcheck_data/pick_red take 21 (9.5 s), base -2.01 deg
+Traceback (most recent call last):
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 689, in torque_disabled
+    yield
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 161, in configure
+    self.bus.configure_motors()
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/feetech/feetech.py", line 213, in configure_motors
+    self.write("Return_Delay_Time", motor, return_delay_time)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1097, in write
+    self._write(addr, length, id_, int_value, num_retry=num_retry, raise_on_error=True, err_msg=err_msg)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1112, in _write
+    comm, error = self.packet_handler.writeTxRx(self.port_handler, motor_id, addr, length, data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/scservo_sdk/protocol_packet_handler.py", line 368, in writeTxRx
+    rxpacket, result, error = self.txRxPacket(port, txpacket)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/scservo_sdk/protocol_packet_handler.py", line 199, in txRxPacket
+    rxpacket, result = self.rxPacket(port)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/scservo_sdk/protocol_packet_handler.py", line 112, in rxPacket
+    rxpacket.extend(port.readPort(wait_length - rx_length))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/scservo_sdk/port_handler.py", line 59, in readPort
+    return self.ser.read(length)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/serial/serialposix.py", line 565, in read
+    ready, _, _ = select.select([self.fd, self.pipe_abort_read_r], [], [], timeout.time_left())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 53, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 48, in main
+    replay_run()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 43, in replay_run
+    play(make_robot_from_config(cfg.robot), commands, names, Path(cfg.out), cfg.task, fps)
+  File "/home/amd-genai1/kitcheck/kitcheck/replay.py", line 173, in play
+    robot.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 108, in connect
+    self.configure()
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 160, in configure
+    with self.bus.torque_disabled():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 691, in torque_disabled
+    self.enable_torque(motors)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/feetech/feetech.py", line 304, in enable_torque
+    self.write("Torque_Enable", motor, TorqueMode.ENABLED.value, num_retry=num_retry)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1097, in write
+    self._write(addr, length, id_, int_value, num_retry=num_retry, raise_on_error=True, err_msg=err_msg)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1121, in _write
+    raise ConnectionError(f"{err_msg} {self.packet_handler.getTxRxResult(comm)}")
+ConnectionError: Failed to write 'Torque_Enable' on id_=1 with '1' after 1 tries. [TxRxResult] Port is in use!
+FATAL: exception not rethrown

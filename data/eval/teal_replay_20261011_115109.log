@@ -1,0 +1,31 @@
+/home/amd-genai1/miniforge3/envs/lerobot/bin/python -m kitcheck.replay_run --robot.type=so101_follower --robot.port=/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C124442-if00 --robot.id=follower '--robot.cameras={front: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0, width: 640, height: 480, fps: 30}, wrist: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0, width: 640, height: 480, fps: 30, fourcc: MJPG}}' --robot.num_read_retries=10 --source=/home/amd-genai1/kitcheck_data/pick_teal --episode=26 --grasp=157 --release=203 --pan_offset=-8.0 --out=/home/amd-genai1/kitcheck/data/eval/teal_replay_20261011_115109 '--task=Pick the teal ring and drop it in the teal cup'
+
+replaying /home/amd-genai1/kitcheck_data/pick_teal take 26 (8.3 s), base -8.00 deg
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 53, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 48, in main
+    replay_run()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 43, in replay_run
+    play(make_robot_from_config(cfg.robot), commands, names, Path(cfg.out), cfg.task, fps)
+  File "/home/amd-genai1/kitcheck/kitcheck/replay.py", line 173, in play
+    robot.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 106, in connect
+    cam.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/cameras/opencv/camera_opencv.py", line 166, in connect
+    self.videocapture = cv2.VideoCapture(self.index_or_path, self.backend)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+FATAL: exception not rethrown

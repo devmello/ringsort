@@ -1,0 +1,40 @@
+/home/amd-genai1/miniforge3/envs/lerobot/bin/python -m kitcheck.replay_run --robot.type=so101_follower --robot.port=/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C124442-if00 --robot.id=follower '--robot.cameras={front: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0, width: 640, height: 480, fps: 30}, wrist: {type: opencv, index_or_path: /dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0, width: 640, height: 480, fps: 30, fourcc: MJPG}}' --robot.num_read_retries=10 --source=/home/amd-genai1/kitcheck_data/pick_teal --episode=17 --grasp=178 --release=234 --pan_offset=2.36 --out=/home/amd-genai1/kitcheck/data/eval/teal_replay_20261011_101314 '--task=Pick the teal ring and drop it in the teal cup'
+
+replaying /home/amd-genai1/kitcheck_data/pick_teal take 17 (10.1 s), base +2.36 deg
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 53, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 48, in main
+    replay_run()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/kitcheck/kitcheck/replay_run.py", line 43, in replay_run
+    play(make_robot_from_config(cfg.robot), commands, names, Path(cfg.out), cfg.task, fps)
+  File "/home/amd-genai1/kitcheck/kitcheck/replay.py", line 199, in play
+    robot.disconnect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 234, in disconnect
+    self.bus.disconnect(self.config.disable_torque_on_disconnect)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 559, in disconnect
+    self.disable_torque(num_retry=5)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/feetech/feetech.py", line 293, in disable_torque
+    self.write("Torque_Enable", motor, TorqueMode.DISABLED.value, num_retry=num_retry)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1097, in write
+    self._write(addr, length, id_, int_value, num_retry=num_retry, raise_on_error=True, err_msg=err_msg)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1123, in _write
+    raise RuntimeError(f"{err_msg} {self.packet_handler.getRxPacketError(error)}")
+RuntimeError: Failed to write 'Torque_Enable' on id_=2 with '0' after 6 tries. 
+easing 7 deg into the take's starting pose over 0.2 s
+FATAL: exception not rethrown
