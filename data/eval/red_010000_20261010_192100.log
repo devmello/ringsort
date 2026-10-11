@@ -1,0 +1,30 @@
+INFO 2026-10-10 19:21:02 _rollout.py:240 Building rollout context...
+INFO 2026-10-10 19:21:02 /context.py:315 Loading policy from 'models/red/010000/pretrained_model'...
+INFO 2026-10-10 19:21:02 /context.py:345 Policy loaded: type=act, device=cuda
+INFO 2026-10-10 19:21:02 /context.py:373 Connecting robot (so100_follower)...
+Loading weights from local directory
+Traceback (most recent call last):
+  File "/home/amd-genai1/miniforge3/envs/lerobot/bin/lerobot-rollout", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 273, in main
+    rollout()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 241, in rollout
+    ctx = build_rollout_context(cfg, shutdown_event)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/rollout/context.py", line 375, in build_rollout_context
+    robot.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 106, in connect
+    cam.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/cameras/opencv/camera_opencv.py", line 171, in connect
+    raise ConnectionError(
+ConnectionError: Failed to open OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0).Run `lerobot-find-cameras opencv` to find available cameras.

@@ -1,0 +1,128 @@
+INFO 2026-10-10 20:23:35 _rollout.py:240 Building rollout context...
+INFO 2026-10-10 20:23:35 /context.py:315 Loading policy from 'models/purple/010000/pretrained_model'...
+INFO 2026-10-10 20:23:36 /context.py:345 Policy loaded: type=act, device=cuda
+INFO 2026-10-10 20:23:36 /context.py:373 Connecting robot (so100_follower)...
+INFO 2026-10-10 20:23:37 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) connected.
+INFO 2026-10-10 20:23:38 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) connected.
+INFO 2026-10-10 20:23:38 follower.py:109 follower SOFollower connected.
+INFO 2026-10-10 20:23:38 /context.py:376 Robot connected: so_follower
+INFO 2026-10-10 20:23:38 /context.py:381 Captured initial robot position (6 keys)
+INFO 2026-10-10 20:23:38 /context.py:482 Setting up dataset (repo_id=local/rollout_kitcheck_purple_20261010_202333)...
+INFO 2026-10-10 20:23:38 /context.py:533 Dataset ready: local/rollout_kitcheck_purple_20261010_202333_20261010_202338 (0 existing episodes)
+INFO 2026-10-10 20:23:38 /context.py:569 Creating inference engine (type=sync)...
+INFO 2026-10-10 20:23:38 /factory.py:100 Creating inference engine: sync
+INFO 2026-10-10 20:23:38 ence/sync.py:78 SyncInferenceEngine initialized (device=cuda, action_keys=6)
+INFO 2026-10-10 20:23:38 /context.py:592 Rollout context assembled successfully
+INFO 2026-10-10 20:23:38 _rollout.py:244 Rollout strategy: episodic
+INFO 2026-10-10 20:23:38 _rollout.py:245 Robot: so100_follower | FPS: 30 | Duration: infinite
+INFO 2026-10-10 20:23:38 gies/core.py:82 Starting inference engine...
+INFO 2026-10-10 20:23:38 ence/sync.py:94 Resetting sync inference state (policy + processors)
+INFO 2026-10-10 20:23:38 ence/sync.py:86 SyncInferenceEngine started (inline mode — no background thread)
+INFO 2026-10-10 20:23:38 gies/core.py:86 Inference engine started
+INFO 2026-10-10 20:23:38 rd_input.py:385 Using terminal keyboard input — keep this terminal focused (Right/Left/Esc, or n=next, r=re-record, q=quit).
+INFO 2026-10-10 20:23:38 /episodic.py:88 Episodic strategy ready
+INFO 2026-10-10 20:23:38 _rollout.py:258 Rollout setup complete, starting rollout...
+INFO 2026-10-10 20:23:38 ence/sync.py:94 Resetting sync inference state (policy + processors)
+INFO 2026-10-10 20:23:38 ls/utils.py:147 Recording episode 0
+MIOpen(HIP): Warning [ParseAndLoadDb] File is unreadable: "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1151/share/miopen/db/gfx1151_20.HIP.fdb.txt"
+Loading weights from local directory
+Map:   0%|          | 0/436 [00:00<?, ? examples/s]Map: 100%|██████████| 436/436 [00:00<00:00, 7557.43 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+INFO 2026-10-10 20:23:58 episodic.py:213 Episodic control loop ended — saving any in-progress episode
+INFO 2026-10-10 20:23:58 le_timer.py:559 Cadence (episode 1): 29.01 Hz vs 30 Hz target · 436 ticks, 15.0 s measured · 0/435 ticks over the 33.3 ms budget (work mean 4.6 ms, worst 22.1 ms)
+INFO 2026-10-10 20:23:58 le_timer.py:606 Cadence summary — whole run, 1 episode · target 30 Hz (33.3 ms budget per tick): 436 ticks, 435 judged
+  effective cadence: 29.01 Hz over 15.0 s measured
+  ticks over the 33.3 ms work budget: 0/435 (0.0%) — work mean 4.6 ms, worst 22.1 ms
+  ticks whose cadence slipped outside the loop body (sleep overshoot / CPU starvation while pacing): 296
+  loop-body steps (share of measured work):
+    observe      mean   1.64 ms · worst   2.66 ms ·  30.7% of work · 436 calls
+    process_obs  mean   0.03 ms · worst   0.10 ms ·   0.5% of work · 436 calls
+    infer        mean   3.05 ms · worst 334.94 ms ·  57.0% of work · 436 calls
+    send         mean   0.36 ms · worst   1.09 ms ·   6.7% of work · 436 calls
+    telemetry    mean   0.00 ms · worst   0.01 ms ·   0.0% of work · 436 calls
+    record       mean   0.13 ms · worst   0.33 ms ·   2.5% of work · 436 calls
+  pacing headroom: 29.1 ms slept per tick on average (max 31.3 ms) — near zero means the loop is saturated
+INFO 2026-10-10 20:23:58 ls/utils.py:147 Stop recording
+INFO 2026-10-10 20:23:58 episodic.py:336 Finalizing dataset...
+INFO 2026-10-10 20:23:58 ies/core.py:154 Stopping inference engine...
+INFO 2026-10-10 20:23:58 ence/sync.py:90 SyncInferenceEngine stopped
+INFO 2026-10-10 20:23:58 ies/core.py:159 Returning robot to initial position before shutdown...
+INFO 2026-10-10 20:24:01 ies/core.py:165 Disconnecting robot...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/amd-genai1/kitcheck/kitcheck/rollout.py", line 64, in <module>
+    main()
+  File "/home/amd-genai1/kitcheck/kitcheck/rollout.py", line 60, in main
+    lerobot_rollout.main()
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 273, in main
+    rollout()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 263, in rollout
+    strategy.teardown(ctx)
+  File "/home/amd-genai1/lerobot/src/lerobot/rollout/strategies/episodic.py", line 352, in teardown
+    self._teardown_hardware(
+  File "/home/amd-genai1/lerobot/src/lerobot/rollout/strategies/core.py", line 166, in _teardown_hardware
+    robot.disconnect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 234, in disconnect
+    self.bus.disconnect(self.config.disable_torque_on_disconnect)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 559, in disconnect
+    self.disable_torque(num_retry=5)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/feetech/feetech.py", line 293, in disable_torque
+    self.write("Torque_Enable", motor, TorqueMode.DISABLED.value, num_retry=num_retry)
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1097, in write
+    self._write(addr, length, id_, int_value, num_retry=num_retry, raise_on_error=True, err_msg=err_msg)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 1123, in _write
+    raise RuntimeError(f"{err_msg} {self.packet_handler.getRxPacketError(error)}")
+RuntimeError: Failed to write 'Torque_Enable' on id_=2 with '0' after 6 tries. 
+FATAL: exception not rethrown

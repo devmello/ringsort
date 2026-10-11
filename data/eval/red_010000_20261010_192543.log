@@ -1,0 +1,45 @@
+INFO 2026-10-10 19:25:46 _rollout.py:240 Building rollout context...
+INFO 2026-10-10 19:25:46 /context.py:315 Loading policy from 'models/red/010000/pretrained_model'...
+INFO 2026-10-10 19:25:46 /context.py:345 Policy loaded: type=act, device=cuda
+INFO 2026-10-10 19:25:46 /context.py:373 Connecting robot (so100_follower)...
+Loading weights from local directory
+Traceback (most recent call last):
+  File "/home/amd-genai1/miniforge3/envs/lerobot/bin/lerobot-rollout", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 273, in main
+    rollout()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 241, in rollout
+    ctx = build_rollout_context(cfg, shutdown_event)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/rollout/context.py", line 375, in build_rollout_context
+    robot.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/robots/so_follower/so_follower.py", line 98, in connect
+    self.bus.connect()
+  File "/home/amd-genai1/lerobot/src/lerobot/utils/decorators.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 526, in connect
+    self._connect(handshake)
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 535, in _connect
+    self._handshake()
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/feetech/feetech.py", line 156, in _handshake
+    self._assert_motors_exist()
+  File "/home/amd-genai1/lerobot/src/lerobot/motors/motors_bus.py", line 502, in _assert_motors_exist
+    raise RuntimeError("\n".join(error_lines))
+RuntimeError: FeetechMotorsBus motor check failed on port '/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C4C124442-if00':
+
+Missing motor IDs:
+  - 6 (expected model: 777)
+
+Full expected motor list (id: model_number):
+{1: 777, 2: 777, 3: 777, 4: 777, 5: 777, 6: 777}
+
+Full found motor list (id: model_number):
+{1: 777, 2: 777, 3: 777, 4: 777, 5: 777}

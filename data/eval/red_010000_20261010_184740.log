@@ -1,0 +1,27 @@
+INFO 2026-10-10 18:47:43 _rollout.py:240 Building rollout context...
+INFO 2026-10-10 18:47:43 /context.py:315 Loading policy from 'models/red/010000/pretrained_model'...
+INFO 2026-10-10 18:47:43 /context.py:345 Policy loaded: type=act, device=cuda
+INFO 2026-10-10 18:47:43 /context.py:373 Connecting robot (so100_follower)...
+INFO 2026-10-10 18:47:45 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) connected.
+INFO 2026-10-10 18:47:46 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) connected.
+INFO 2026-10-10 18:47:46 follower.py:109 follower SOFollower connected.
+INFO 2026-10-10 18:47:46 /context.py:376 Robot connected: so_follower
+INFO 2026-10-10 18:47:46 /context.py:381 Captured initial robot position (6 keys)
+INFO 2026-10-10 18:47:46 /context.py:482 Setting up dataset (repo_id=local/eval_kitcheck_red_20261010_184740)...
+Loading weights from local directory
+Traceback (most recent call last):
+  File "/home/amd-genai1/miniforge3/envs/lerobot/bin/lerobot-rollout", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 273, in main
+    rollout()
+  File "/home/amd-genai1/lerobot/src/lerobot/configs/parser.py", line 436, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/scripts/lerobot_rollout.py", line 241, in rollout
+    ctx = build_rollout_context(cfg, shutdown_event)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amd-genai1/lerobot/src/lerobot/rollout/context.py", line 507, in build_rollout_context
+    raise ValueError(
+ValueError: Dataset names for rollout must start with 'rollout_'. Use --dataset.repo_id=<user>/rollout_<name> for policy deployment datasets.
+FATAL: exception not rethrown

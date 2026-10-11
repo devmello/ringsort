@@ -1,0 +1,96 @@
+kitcheck: adding {'shoulder_pan.pos': -4.0} to every command sent to the follower
+INFO 2026-10-10 19:47:25 _rollout.py:240 Building rollout context...
+INFO 2026-10-10 19:47:25 /context.py:315 Loading policy from 'models/red/010000/pretrained_model'...
+INFO 2026-10-10 19:47:25 /context.py:345 Policy loaded: type=act, device=cuda
+INFO 2026-10-10 19:47:25 /context.py:373 Connecting robot (so100_follower)...
+INFO 2026-10-10 19:47:26 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) connected.
+INFO 2026-10-10 19:47:28 a_opencv.py:195 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) connected.
+INFO 2026-10-10 19:47:28 follower.py:109 follower SOFollower connected.
+INFO 2026-10-10 19:47:28 /context.py:376 Robot connected: so_follower
+INFO 2026-10-10 19:47:28 /context.py:381 Captured initial robot position (6 keys)
+INFO 2026-10-10 19:47:28 /context.py:482 Setting up dataset (repo_id=local/rollout_kitcheck_red_20261010_194722)...
+INFO 2026-10-10 19:47:28 /context.py:533 Dataset ready: local/rollout_kitcheck_red_20261010_194722_20261010_194728 (0 existing episodes)
+INFO 2026-10-10 19:47:28 /context.py:569 Creating inference engine (type=sync)...
+INFO 2026-10-10 19:47:28 /factory.py:100 Creating inference engine: sync
+INFO 2026-10-10 19:47:28 ence/sync.py:78 SyncInferenceEngine initialized (device=cuda, action_keys=6)
+INFO 2026-10-10 19:47:28 /context.py:592 Rollout context assembled successfully
+INFO 2026-10-10 19:47:28 _rollout.py:244 Rollout strategy: episodic
+INFO 2026-10-10 19:47:28 _rollout.py:245 Robot: so100_follower | FPS: 30 | Duration: infinite
+INFO 2026-10-10 19:47:28 gies/core.py:82 Starting inference engine...
+INFO 2026-10-10 19:47:28 ence/sync.py:94 Resetting sync inference state (policy + processors)
+INFO 2026-10-10 19:47:28 ence/sync.py:86 SyncInferenceEngine started (inline mode — no background thread)
+INFO 2026-10-10 19:47:28 gies/core.py:86 Inference engine started
+INFO 2026-10-10 19:47:28 rd_input.py:385 Using terminal keyboard input — keep this terminal focused (Right/Left/Esc, or n=next, r=re-record, q=quit).
+INFO 2026-10-10 19:47:28 /episodic.py:88 Episodic strategy ready
+INFO 2026-10-10 19:47:28 _rollout.py:258 Rollout setup complete, starting rollout...
+INFO 2026-10-10 19:47:28 ence/sync.py:94 Resetting sync inference state (policy + processors)
+INFO 2026-10-10 19:47:28 ls/utils.py:147 Recording episode 0
+MIOpen(HIP): Warning [ParseAndLoadDb] File is unreadable: "/home/amd-genai1/miniforge3/envs/lerobot/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1151/share/miopen/db/gfx1151_20.HIP.fdb.txt"
+Loading weights from local directory
+Map:   0%|          | 0/440 [00:00<?, ? examples/s]Map: 100%|██████████| 440/440 [00:00<00:00, 7412.75 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+INFO 2026-10-10 19:47:48 episodic.py:213 Episodic control loop ended — saving any in-progress episode
+INFO 2026-10-10 19:47:48 le_timer.py:559 Cadence (episode 1): 29.32 Hz vs 30 Hz target · 440 ticks, 15.0 s measured · 0/439 ticks over the 33.3 ms budget (work mean 20.3 ms, worst 24.8 ms)
+INFO 2026-10-10 19:47:48 le_timer.py:606 Cadence summary — whole run, 1 episode · target 30 Hz (33.3 ms budget per tick): 440 ticks, 439 judged
+  effective cadence: 29.32 Hz over 15.0 s measured
+  ticks over the 33.3 ms work budget: 0/439 (0.0%) — work mean 20.3 ms, worst 24.8 ms
+  ticks whose cadence slipped outside the loop body (sleep overshoot / CPU starvation while pacing): 5
+  loop-body steps (share of measured work):
+    observe      mean   1.19 ms · worst   2.58 ms ·   5.7% of work · 440 calls
+    process_obs  mean   0.01 ms · worst   0.02 ms ·   0.0% of work · 440 calls
+    infer        mean  19.36 ms · worst 331.94 ms ·  92.1% of work · 440 calls
+    send         mean   0.34 ms · worst   1.29 ms ·   1.6% of work · 440 calls
+    telemetry    mean   0.00 ms · worst   0.00 ms ·   0.0% of work · 440 calls
+    record       mean   0.07 ms · worst   0.33 ms ·   0.3% of work · 440 calls
+  pacing headroom: 13.1 ms slept per tick on average (max 14.0 ms) — near zero means the loop is saturated
+INFO 2026-10-10 19:47:48 ls/utils.py:147 Stop recording
+INFO 2026-10-10 19:47:48 episodic.py:336 Finalizing dataset...
+INFO 2026-10-10 19:47:48 ies/core.py:154 Stopping inference engine...
+INFO 2026-10-10 19:47:48 ence/sync.py:90 SyncInferenceEngine stopped
+INFO 2026-10-10 19:47:48 ies/core.py:159 Returning robot to initial position before shutdown...
+INFO 2026-10-10 19:47:51 ies/core.py:165 Disconnecting robot...
+INFO 2026-10-10 19:47:51 a_opencv.py:631 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera-video-index0) disconnected.
+INFO 2026-10-10 19:47:51 a_opencv.py:631 OpenCVCamera(/dev/v4l/by-id/usb-icSpring_icspring_camera_202404160005-video-index0) disconnected.
+INFO 2026-10-10 19:47:51 follower.py:238 follower SOFollower disconnected.
+INFO 2026-10-10 19:47:51 ls/utils.py:147 Exiting
+INFO 2026-10-10 19:47:51 episodic.py:357 Episodic strategy teardown complete
+INFO 2026-10-10 19:47:51 _rollout.py:267 Rollout finished
