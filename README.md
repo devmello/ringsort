@@ -320,4 +320,4 @@ At the event we built everything else: the workcell, every demonstration, every 
 
 ## License
 
-[To choose before publishing]
+[MIT](LICENSE).
